@@ -1,1 +1,3 @@
 theme: jekyll-theme-cayman
+source: my-app/dist
+include: [my-app/dist]
