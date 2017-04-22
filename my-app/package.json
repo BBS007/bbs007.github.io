@@ -1,11 +1,11 @@
 {
   "name": "my-app",
-  "version": "0.0.0",
+  "version": "0.0.1",
   "license": "MIT",
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
-    "build": "ng build && gulp deploy",
+    "deploy": "ng build && gulp deploy",
     "clean": "gulp clean",
     "test": "ng test",
     "lint": "ng lint",
