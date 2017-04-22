@@ -1,14 +1,23 @@
 var gulp = require('gulp');
 var del = require('del');
 
-gulp.task('deploy', () => {
-    return gulp.src('dist/*', {read: false})
+
+/**
+ * Deploy the Angular dist on root.
+ * It copies everything from dist/ to root folder.
+ */
+gulp.task('deploy', ['clean'], () => {
+    return gulp.src('dist/*')
         .pipe(gulp.dest('../'));
 });
 
 
+/**
+ * Clean the root path.
+ * Delete everything except hidden files and the current directory.
+ */
 gulp.task('clean', () => {
-    return del([
+    return del.sync([
         // Delete everything
         '../*',
 
@@ -17,5 +26,9 @@ gulp.task('clean', () => {
 
         // And the my-app directory
         '!../my-app'
-    ]);
+    ], {
+            // Allow execution outside this directory    
+            force: true
+        }
+    );
 });
