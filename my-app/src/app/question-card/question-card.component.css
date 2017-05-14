@@ -1,0 +1,21 @@
+.card {
+    width: 12em;
+    height: 16em;
+    border: 1px solid black;
+    border-radius: 25px;
+    padding: 0.5em;
+    vertical-align: middle;
+    display: table;
+}
+
+.card-question p {
+    display: table-cell;
+    margin: 0em;
+    border-radius: 20px;
+    height: inherit;
+    width: inherit;
+    background-color: black;
+    color: white;
+    vertical-align: middle;
+    text-align: center;
+}

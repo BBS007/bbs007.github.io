@@ -11,6 +11,7 @@ import { CardsAgainstHumanityComponent } from './cards-against-humanity/cards-ag
 
 // Services
 import { CardsService } from './cards.service';
+import { QuestionCardComponent } from './question-card/question-card.component';
 
 @NgModule({
     imports: [
@@ -26,7 +27,8 @@ import { CardsService } from './cards.service';
     ],
     declarations: [
         AppComponent,
-        CardsAgainstHumanityComponent
+        CardsAgainstHumanityComponent,
+        QuestionCardComponent
     ],
     providers: [
         CardsService

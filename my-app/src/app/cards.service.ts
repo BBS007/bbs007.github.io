@@ -26,14 +26,10 @@ export class CardsService {
     public getQuestionCards(): Observable<QuestionCard[]> {
         console.log('Getting questions');
         if (!this.dataQuestion) {
-            console.log('Refreshing');
             this.dataQuestion = this.http.get(this.url)
                 .map(res => {
-                    console.log('Result from reading the file');
                     console.log(res.json());
                     return res.json().blackCards.map(elt => {
-                        console.log('One element');
-                        console.log(elt);
                         return new QuestionCard(elt.text, elt.pick);
                     });
                 });
@@ -45,6 +41,16 @@ export class CardsService {
 
 
     public getAnswserCards(): Observable<AnswerCard[]> {
+
+        if (!this.dataAnswer) {
+            this.dataAnswer = this.http.get(this.url)
+                .map(res => {
+                    return res.json().whiteCards.map(elt => {
+                    console.log(elt);
+                        return new AnswerCard(elt);
+                })
+            })
+        }
 
         return this.dataAnswer
     }

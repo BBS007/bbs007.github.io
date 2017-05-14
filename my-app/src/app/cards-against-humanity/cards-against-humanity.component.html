@@ -1,3 +1,6 @@
-<p>
-  cards-against-humanity works!
-</p>
+<h1>Questions</h1>
+
+<div *ngFor="let q of questions">
+    <app-question-card [questionCard]="q">
+    </app-question-card>
+</div>
