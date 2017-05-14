@@ -43,7 +43,7 @@ export class CardsAgainstHumanityComponent implements OnInit {
 
         this.cardsService.getAnswserCards().subscribe(res => {
             this.answers = res;
-            this.currentAnswers = this.randomAnswers(5);
+            this.currentAnswers = this.randomAnswers();
         });
 
         this.currentQuestion = null;
