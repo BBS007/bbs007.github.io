@@ -9,7 +9,7 @@ import { QuestionCard } from '../question-card';
 })
 export class QuestionCardComponent implements OnInit {
 
-  @Input() questionCard: QuestionCard;
+  @Input() card: QuestionCard;
 
   constructor() { }
 

@@ -15,7 +15,7 @@ import { AnswerCard } from './answer-card'
 @Injectable()
 export class CardsService {
 
-    url: string = '../assets/cards.json';
+    url_en: string = '../assets/cards.json';
 
     dataQuestion: Observable<QuestionCard[]>;
     dataAnswer: Observable<AnswerCard[]>;
@@ -24,16 +24,14 @@ export class CardsService {
 
 
     public getQuestionCards(): Observable<QuestionCard[]> {
-        console.log('Getting questions');
+        
         if (!this.dataQuestion) {
-            this.dataQuestion = this.http.get(this.url)
-                .map(res => {
-                    console.log(res.json());
+            this.dataQuestion = this.http.get(this.url_en)
+                .map(res => { 
                     return res.json().blackCards.map(elt => {
                         return new QuestionCard(elt.text, elt.pick);
                     });
                 });
-            console.log(this.dataQuestion);
         }
 
         return this.dataQuestion;
@@ -43,10 +41,9 @@ export class CardsService {
     public getAnswserCards(): Observable<AnswerCard[]> {
 
         if (!this.dataAnswer) {
-            this.dataAnswer = this.http.get(this.url)
+            this.dataAnswer = this.http.get(this.url_en)
                 .map(res => {
                     return res.json().whiteCards.map(elt => {
-                    console.log(elt);
                         return new AnswerCard(elt);
                 })
             })

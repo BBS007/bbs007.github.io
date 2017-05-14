@@ -4,14 +4,14 @@ import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 import { RouterModule } from '@angular/router'
 
+// Services
+import { CardsService } from './cards.service';
 
 // Components
 import { AppComponent } from './app.component';
 import { CardsAgainstHumanityComponent } from './cards-against-humanity/cards-against-humanity.component';
-
-// Services
-import { CardsService } from './cards.service';
 import { QuestionCardComponent } from './question-card/question-card.component';
+import { AnswerCardComponent } from './answer-card/answer-card.component';
 
 @NgModule({
     imports: [
@@ -28,7 +28,8 @@ import { QuestionCardComponent } from './question-card/question-card.component';
     declarations: [
         AppComponent,
         CardsAgainstHumanityComponent,
-        QuestionCardComponent
+        QuestionCardComponent,
+        AnswerCardComponent
     ],
     providers: [
         CardsService

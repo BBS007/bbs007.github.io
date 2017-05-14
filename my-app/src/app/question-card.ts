@@ -8,10 +8,10 @@ import { Card } from "app/card";
 export class QuestionCard extends Card {
 
     // Thenumber of blanks in the question
-    private blankNumber: number;
+    private pick: number;
 
-    constructor(text: string, blankNumber: number) {
+    constructor(text: string, pick: number) {
         super(text);
-        this.blankNumber = blankNumber;
+        this.pick = pick;
     }
 }

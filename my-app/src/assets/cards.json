@@ -305,7 +305,7 @@
             "pick": 2
         },
         {
-            "text": "Dear Abby,<br><br>I'm having some trouble with _ and would like your advice.",
+            "text": "Dear Abby,\n\nI'm having some trouble with _ and would like your advice.",
             "pick": 1
         },
         {
@@ -333,7 +333,7 @@
             "pick": 2
         },
         {
-            "text": "Here is the church<br>Here is the steeple<br>Open the doors<br>And there is _.",
+            "text": "Here is the church<br>Here is the steeple\nOpen the doors\nAnd there is _.",
             "pick": 1
         },
         {
