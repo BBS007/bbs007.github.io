@@ -7,7 +7,7 @@ var del = require('del');
  * It copies everything from dist/ to root folder.
  */
 gulp.task('deploy', ['clean'], () => {
-    return gulp.src('dist/*')
+    return gulp.src('dist/**')
         .pipe(gulp.dest('../'));
 });
 
