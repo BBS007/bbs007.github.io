@@ -1,9 +1,9 @@
 webpackJsonp([1,4],{
 
-/***/ 103:
+/***/ 104:
 /***/ (function(module, exports, __webpack_require__) {
 
-exports = module.exports = __webpack_require__(26)();
+exports = module.exports = __webpack_require__(23)();
 // imports
 
 
@@ -18,7 +18,7 @@ module.exports = module.exports.toString();
 
 /***/ }),
 
-/***/ 141:
+/***/ 143:
 /***/ (function(module, exports) {
 
 function webpackEmptyContext(req) {
@@ -27,20 +27,20 @@ function webpackEmptyContext(req) {
 webpackEmptyContext.keys = function() { return []; };
 webpackEmptyContext.resolve = webpackEmptyContext;
 module.exports = webpackEmptyContext;
-webpackEmptyContext.id = 141;
+webpackEmptyContext.id = 143;
 
 
 /***/ }),
 
-/***/ 142:
+/***/ 144:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(11);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_platform_browser_dynamic__ = __webpack_require__(147);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__app_app_module__ = __webpack_require__(149);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__environments_environment__ = __webpack_require__(150);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_platform_browser_dynamic__ = __webpack_require__(151);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__app_app_module__ = __webpack_require__(153);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__environments_environment__ = __webpack_require__(154);
 
 
 
@@ -53,12 +53,12 @@ __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_1__angular_platform_browser_dyna
 
 /***/ }),
 
-/***/ 148:
+/***/ 152:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(11);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__cards_against_humanity_cards_against_humanity_component__ = __webpack_require__(89);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__cards_against_humanity_cards_against_humanity_component__ = __webpack_require__(90);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return AppComponent; });
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -76,8 +76,8 @@ var AppComponent = (function () {
 AppComponent = __decorate([
     __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Y" /* Component */])({
         selector: 'app-root',
-        template: __webpack_require__(209),
-        styles: [__webpack_require__(205)],
+        template: __webpack_require__(216),
+        styles: [__webpack_require__(211)],
         entryComponents: [__WEBPACK_IMPORTED_MODULE_1__cards_against_humanity_cards_against_humanity_component__["a" /* CardsAgainstHumanityComponent */]]
     })
 ], AppComponent);
@@ -86,20 +86,20 @@ AppComponent = __decorate([
 
 /***/ }),
 
-/***/ 149:
+/***/ 153:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_platform_browser__ = __webpack_require__(28);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_core__ = __webpack_require__(11);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_forms__ = __webpack_require__(146);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__angular_http__ = __webpack_require__(85);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__angular_router__ = __webpack_require__(86);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__cards_service__ = __webpack_require__(90);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__app_component__ = __webpack_require__(148);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__cards_against_humanity_cards_against_humanity_component__ = __webpack_require__(89);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__question_card_question_card_component__ = __webpack_require__(91);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__answer_card_answer_card_component__ = __webpack_require__(87);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_forms__ = __webpack_require__(150);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__angular_http__ = __webpack_require__(86);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__angular_router__ = __webpack_require__(87);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__cards_service__ = __webpack_require__(91);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__app_component__ = __webpack_require__(152);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__cards_against_humanity_cards_against_humanity_component__ = __webpack_require__(90);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__question_card_question_card_component__ = __webpack_require__(92);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__answer_card_answer_card_component__ = __webpack_require__(88);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return AppModule; });
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -154,7 +154,7 @@ AppModule = __decorate([
 
 /***/ }),
 
-/***/ 150:
+/***/ 154:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -171,10 +171,10 @@ var environment = {
 
 /***/ }),
 
-/***/ 204:
+/***/ 210:
 /***/ (function(module, exports, __webpack_require__) {
 
-exports = module.exports = __webpack_require__(26)();
+exports = module.exports = __webpack_require__(23)();
 // imports
 
 
@@ -189,15 +189,15 @@ module.exports = module.exports.toString();
 
 /***/ }),
 
-/***/ 205:
+/***/ 211:
 /***/ (function(module, exports, __webpack_require__) {
 
-exports = module.exports = __webpack_require__(26)();
+exports = module.exports = __webpack_require__(23)();
 // imports
 
 
 // module
-exports.push([module.i, ".selected {\r\n    background-color: #CFD8DC !important;\r\n    color: white;\r\n}\r\n\r\n.heroes {\r\n    margin: 0 0 2em 0;\r\n    list-style-type: none;\r\n    padding: 0;\r\n    width: 15em;\r\n}\r\n\r\n.heroes li {\r\n    cursor: pointer;\r\n    position: relative;\r\n    left: 0;\r\n    background-color: #EEE;\r\n    margin: .5em;\r\n    padding: .3em 0;\r\n    height: 1.6em;\r\n    border-radius: 4px;\r\n}\r\n\r\n.heroes li.selected:hover {\r\n    background-color: #BBD8DC !important;\r\n    color: white;\r\n}\r\n\r\n.heroes li:hover {\r\n    color: #607D8B;\r\n    background-color: #DDD;\r\n    left: .1em;\r\n}\r\n\r\n.heroes .text {\r\n    position: relative;\r\n    top: -3px;\r\n}\r\n\r\n.heroes .badge {\r\n    display: inline-block;\r\n    font-size: small;\r\n    color: white;\r\n    padding: 0.8em 0.7em 0 0.7em;\r\n    background-color: #607D8B;\r\n    line-height: 1em;\r\n    position: relative;\r\n    left: -1px;\r\n    top: -4px;\r\n    height: 1.8em;\r\n    margin-right: .8em;\r\n    border-radius: 4px 0 0 4px;\r\n}\r\n", ""]);
+exports.push([module.i, "", ""]);
 
 // exports
 
@@ -207,10 +207,10 @@ module.exports = module.exports.toString();
 
 /***/ }),
 
-/***/ 206:
+/***/ 212:
 /***/ (function(module, exports, __webpack_require__) {
 
-exports = module.exports = __webpack_require__(26)();
+exports = module.exports = __webpack_require__(23)();
 // imports
 
 
@@ -225,38 +225,38 @@ module.exports = module.exports.toString();
 
 /***/ }),
 
-/***/ 208:
+/***/ 215:
 /***/ (function(module, exports) {
 
 module.exports = "<div class=\"card card-answer\">\n  <div class=\"card-text\">\n    {{card.text}}\n  </div>\n</div>"
 
 /***/ }),
 
-/***/ 209:
+/***/ 216:
 /***/ (function(module, exports) {
 
 module.exports = "<app-cards-against-humanity>\n    \n</app-cards-against-humanity>\n"
 
 /***/ }),
 
-/***/ 210:
+/***/ 217:
 /***/ (function(module, exports) {
 
-module.exports = "<h1>Question</h1>\n\n<div *ngIf=\"currentQuestion\">\n    <app-question-card [card]=\"currentQuestion\">\n        \n    </app-question-card>\n</div>\n\n<h1>\n    Answers\n</h1>\n\n<div *ngIf=\"currentAnswers\">\n    <div *ngFor=\"let a of currentAnswers\" >\n        <app-answer-card [card]=\"a\" class=\"answer-list\">\n        </app-answer-card>\n    </div>\n</div>"
+module.exports = "<div class=\"btn-block\">\n<button (click)=\"newGame()\" class=\"btn btn-primary\">New Game</button>\n<button (click)=\"newDeal()\" class=\"btn btn-primary\">New Deal</button>\n</div>\n    \n\n<h1>\n    Bienvenue sur Cards Against Humanity\n</h1>\n\n<h2>Question</h2>\n\n<div *ngIf=\"currentQuestion\">\n    <app-question-card [card]=\"currentQuestion\">\n    </app-question-card>\n</div>\n\n<h2>\n    Answers\n</h2>\n\n<div *ngIf=\"currentAnswers\">\n    <div *ngFor=\"let a of currentAnswers\" >\n        <app-answer-card [card]=\"a\" class=\"answer-list\">\n        </app-answer-card>\n    </div>\n</div>"
 
 /***/ }),
 
-/***/ 211:
+/***/ 218:
 /***/ (function(module, exports) {
 
 module.exports = "<div class=\"card card-question\">\n  <div class=\"card-text\">\n    {{card.text}}\n\n    <div class=\"card-pick\">\n      {{card.pick}}\n    </div>\n  </div>\n\n</div>"
 
 /***/ }),
 
-/***/ 477:
+/***/ 487:
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(142);
+module.exports = __webpack_require__(144);
 
 
 /***/ }),
@@ -265,7 +265,7 @@ module.exports = __webpack_require__(142);
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_app_card__ = __webpack_require__(88);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_app_card__ = __webpack_require__(89);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return AnswerCard; });
 /**
  * This class represents an answer card.
@@ -297,7 +297,7 @@ var AnswerCard = (function (_super) {
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_app_card__ = __webpack_require__(88);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_app_card__ = __webpack_require__(89);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return QuestionCard; });
 /**
  * This class represents a question. This is basically some text with blanks or
@@ -328,7 +328,7 @@ var QuestionCard = (function (_super) {
 
 /***/ }),
 
-/***/ 87:
+/***/ 88:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -360,8 +360,8 @@ __decorate([
 AnswerCardComponent = __decorate([
     __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Y" /* Component */])({
         selector: 'app-answer-card',
-        template: __webpack_require__(208),
-        styles: [__webpack_require__(204), __webpack_require__(103)]
+        template: __webpack_require__(215),
+        styles: [__webpack_require__(210), __webpack_require__(104)]
     }),
     __metadata("design:paramtypes", [])
 ], AnswerCardComponent);
@@ -371,7 +371,7 @@ var _a;
 
 /***/ }),
 
-/***/ 88:
+/***/ 89:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -390,18 +390,18 @@ var Card = (function () {
 
 /***/ }),
 
-/***/ 89:
+/***/ 90:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(11);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_router__ = __webpack_require__(86);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_router__ = __webpack_require__(87);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_common__ = __webpack_require__(41);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__cards_service__ = __webpack_require__(90);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__cards_service__ = __webpack_require__(91);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_app_question_card__ = __webpack_require__(58);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5_app_answer_card__ = __webpack_require__(57);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__question_card_question_card_component__ = __webpack_require__(91);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__answer_card_answer_card_component__ = __webpack_require__(87);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__question_card_question_card_component__ = __webpack_require__(92);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__answer_card_answer_card_component__ = __webpack_require__(88);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return CardsAgainstHumanityComponent; });
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -415,9 +415,12 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 
 
 
+// Services
+
+// Classes
 
 
-
+// Components
 
 
 var CardsAgainstHumanityComponent = (function () {
@@ -426,17 +429,42 @@ var CardsAgainstHumanityComponent = (function () {
         this.cardsService = cardsService;
         this.route = route;
         this.location = location;
-        this.cardsService.getQuestionCards().subscribe(function (res) {
-            _this.questions = res;
-            _this.currentQuestion = _this.randomQuestion();
-        });
-        this.cardsService.getAnswserCards().subscribe(function (res) {
-            _this.answers = res;
-            _this.currentAnswers = _this.randomAnswers(5);
-        });
         this.currentQuestion = null;
         this.currentAnswers = null;
+        // Init the cards and deal when the promises are resolved
+        this.initCardsLists()
+            .then(function (res) {
+            _this.newDeal();
+        });
     }
+    /**
+     * Will fetch the lists in a promise.
+     * @return a promise that is resolved when lists are reset.
+     */
+    CardsAgainstHumanityComponent.prototype.initCardsLists = function () {
+        var _this = this;
+        // Questions promise, resolved when the result is set
+        var promiseQuestions = new Promise(function (resolve) {
+            _this.cardsService.getQuestionCards().subscribe(function (res) {
+                _this.questions = res;
+                console.log("Questions set");
+                resolve(true);
+            });
+        });
+        // Answers promise, resolved when the result is set
+        var promiseAnswers = new Promise(function (resolve) {
+            _this.cardsService.getAnswserCards().subscribe(function (res) {
+                _this.answers = res;
+                console.log("Answers set");
+                resolve(true);
+            });
+        });
+        // This promise is resolved after both are resolved
+        return Promise.all([
+            promiseQuestions,
+            promiseAnswers
+        ]);
+    };
     CardsAgainstHumanityComponent.prototype.randomQuestion = function () {
         var ret = new __WEBPACK_IMPORTED_MODULE_4_app_question_card__["a" /* QuestionCard */]("No more questions", 0);
         if (0 != this.questions.length) {
@@ -445,7 +473,6 @@ var CardsAgainstHumanityComponent = (function () {
             // Get the random question and delete it from the list
             ret = this.questions.splice(randNumber, 1)[0];
         }
-        console.log(ret);
         return ret;
     };
     CardsAgainstHumanityComponent.prototype.randomAnswers = function (howMany) {
@@ -463,8 +490,23 @@ var CardsAgainstHumanityComponent = (function () {
                 ret.push(new __WEBPACK_IMPORTED_MODULE_5_app_answer_card__["a" /* AnswerCard */]("No more answers"));
             }
         }
-        console.log(ret);
         return ret;
+    };
+    CardsAgainstHumanityComponent.prototype.newDeal = function () {
+        console.log("New deal");
+        this.currentQuestion = this.randomQuestion();
+        this.currentAnswers = this.randomAnswers();
+        console.log("Remaining questions " + this.questions.length);
+        console.log("Remaining answers " + this.answers.length);
+    };
+    CardsAgainstHumanityComponent.prototype.newGame = function () {
+        var _this = this;
+        console.log("New game");
+        this.initCardsLists()
+            .then(function (res) {
+            console.log("Promise res : " + res);
+            _this.newDeal();
+        });
     };
     CardsAgainstHumanityComponent.prototype.ngOnInit = function () {
     };
@@ -473,9 +515,11 @@ var CardsAgainstHumanityComponent = (function () {
 CardsAgainstHumanityComponent = __decorate([
     __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Y" /* Component */])({
         selector: 'app-cards-against-humanity',
-        template: __webpack_require__(210),
-        styles: [__webpack_require__(206)],
-        providers: [__WEBPACK_IMPORTED_MODULE_3__cards_service__["a" /* CardsService */]],
+        template: __webpack_require__(217),
+        styles: [__webpack_require__(212)],
+        providers: [
+            __WEBPACK_IMPORTED_MODULE_3__cards_service__["a" /* CardsService */]
+        ],
         entryComponents: [
             __WEBPACK_IMPORTED_MODULE_6__question_card_question_card_component__["a" /* QuestionCardComponent */],
             __WEBPACK_IMPORTED_MODULE_7__answer_card_answer_card_component__["a" /* AnswerCardComponent */]
@@ -489,13 +533,13 @@ var _a, _b, _c;
 
 /***/ }),
 
-/***/ 90:
+/***/ 91:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(11);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_http__ = __webpack_require__(85);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_rxjs_Rx__ = __webpack_require__(213);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_http__ = __webpack_require__(86);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_rxjs_Rx__ = __webpack_require__(220);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_rxjs_Rx___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2_rxjs_Rx__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__question_card__ = __webpack_require__(58);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__answer_card__ = __webpack_require__(57);
@@ -520,11 +564,18 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 var CardsService = (function () {
     function CardsService(http) {
         this.http = http;
-        this.url_en = '../assets/cards.json';
+        // Urls for different languages
+        this.url_en = '../assets/cards_en.json';
+        this.url_fr = '../assets/cards_en.json';
     }
+    // Choose the url according to the current lang
+    CardsService.prototype.chooseUrl = function () {
+        return this.url_fr;
+    };
     CardsService.prototype.getQuestionCards = function () {
+        var url = this.chooseUrl();
         if (!this.dataQuestion) {
-            this.dataQuestion = this.http.get(this.url_en)
+            this.dataQuestion = this.http.get(url)
                 .map(function (res) {
                 return res.json().blackCards.map(function (elt) {
                     return new __WEBPACK_IMPORTED_MODULE_3__question_card__["a" /* QuestionCard */](elt.text, elt.pick);
@@ -534,8 +585,9 @@ var CardsService = (function () {
         return this.dataQuestion;
     };
     CardsService.prototype.getAnswserCards = function () {
+        var url = this.chooseUrl();
         if (!this.dataAnswer) {
-            this.dataAnswer = this.http.get(this.url_en)
+            this.dataAnswer = this.http.get(url)
                 .map(function (res) {
                 return res.json().whiteCards.map(function (elt) {
                     return new __WEBPACK_IMPORTED_MODULE_4__answer_card__["a" /* AnswerCard */](elt);
@@ -556,7 +608,7 @@ var _a;
 
 /***/ }),
 
-/***/ 91:
+/***/ 92:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -588,8 +640,8 @@ __decorate([
 QuestionCardComponent = __decorate([
     __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Y" /* Component */])({
         selector: 'app-question-card',
-        template: __webpack_require__(211),
-        styles: [__webpack_require__(103)]
+        template: __webpack_require__(218),
+        styles: [__webpack_require__(104)]
     }),
     __metadata("design:paramtypes", [])
 ], QuestionCardComponent);
@@ -599,5 +651,5 @@ var _a;
 
 /***/ })
 
-},[477]);
+},[487]);
 //# sourceMappingURL=main.bundle.js.map
