@@ -1,27 +1,27 @@
-<div class="btn-block">
-<button (click)="newGame()" class="btn btn-primary">New Game</button>
-<button (click)="newDeal()" class="btn btn-primary">New Deal</button>
-</div>
-    
+<div class="board-back">
 
-<h1>
-    Bienvenue sur Cards Against Humanity
-</h1>
+    <div class="board">
 
-<h2>Question</h2>
-
-<div *ngIf="currentQuestion">
-    <app-question-card [card]="currentQuestion">
-    </app-question-card>
-</div>
-
-<h2>
-    Answers
-</h2>
-
-<div *ngIf="currentAnswers">
-    <div *ngFor="let a of currentAnswers" >
-        <app-answer-card [card]="a" class="answer-list">
-        </app-answer-card>
+    <div class="pull-right">
+        <button (click)="newGame()" class="btn btn-block btn-success">New Game</button>
+        <button (click)="newDeal()" class="btn btn-block btn-success">New Deal</button>
     </div>
+
+        <div *ngIf="currentQuestion">
+            <app-question-card [card]="currentQuestion" class="question">
+            </app-question-card>
+        </div>
+
+        <div *ngIf="currentAnswers" class="answers">
+            
+            <ng-container *ngFor="let a of currentAnswers">
+                
+                <app-answer-card [card]="a" class="answer">
+                </app-answer-card>
+                
+            </ng-container>
+            
+        </div>
+    </div>
+
 </div>
