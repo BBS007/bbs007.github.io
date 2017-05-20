@@ -17,7 +17,8 @@ import { AnswerCardComponent } from '../answer-card/answer-card.component';
     selector: 'app-cards-against-humanity',
     templateUrl: './cards-against-humanity.component.html',
     styleUrls: [
-        './cards-against-humanity.component.css'
+        './cards-against-humanity.component.css',
+        '../question-card/question-card.component.css'
     ],
     providers: [
         CardsService

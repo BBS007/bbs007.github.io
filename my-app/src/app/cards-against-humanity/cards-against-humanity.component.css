@@ -10,6 +10,10 @@
     border: 20px solid rgb(80, 30, 50);
     background-color: rgba(20, 110, 20, 0.9);
 
+    box-shadow: inset 0 0 4em black;
+
+    padding: 1em;
+
     z-index: 98;
 }
 
@@ -39,5 +43,4 @@
     position: relative;
     z-index: 89;
 
-    box-shadow: 0 0 4em white;
 }

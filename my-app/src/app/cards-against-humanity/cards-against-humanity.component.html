@@ -8,7 +8,7 @@
     </div>
 
         <div *ngIf="currentQuestion">
-            <app-question-card [card]="currentQuestion" class="question">
+            <app-question-card [card]="currentQuestion" class="question card-flat">
             </app-question-card>
         </div>
 
@@ -16,7 +16,7 @@
             
             <ng-container *ngFor="let a of currentAnswers">
                 
-                <app-answer-card [card]="a" class="answer">
+                <app-answer-card [card]="a" class="answer card-hand">
                 </app-answer-card>
                 
             </ng-container>

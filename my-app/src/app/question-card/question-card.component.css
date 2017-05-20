@@ -13,7 +13,6 @@
 
     background-color: white;
 
-    box-shadow: 1em 1em 4em black;
 }
 
 .card-text {
@@ -31,6 +30,12 @@
 }
 
 /* Question card */
+.card-question {
+    background: white;
+
+    box-shadow: 0em 0em 1em black;
+}
+
 .card-question .card-text {
     background-color: black;
     color: white;
@@ -56,9 +61,15 @@
 /* Answer card */
 .card-answer {
     background-color: black;
+
+    box-shadow: 1em 1em 4em black;
 }
 
 .card-answer .card-text {
     background-color: white;
     color: black;
+}
+
+.card-answer:hover {
+    box-shadow: 0 0 4em white;
 }
