@@ -1,6 +1,6 @@
 /* Board */
 .board-back {
-    background: url("/assets/board-noise.png");
+    background: url("/assets/board-noise.jpg");
 
     z-index: 99;
 }

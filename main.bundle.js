@@ -1,23 +1,5 @@
 webpackJsonp([1,4],{
 
-/***/ 104:
-/***/ (function(module, exports, __webpack_require__) {
-
-exports = module.exports = __webpack_require__(23)();
-// imports
-
-
-// module
-exports.push([module.i, "/* Global cards style */\r\n.card {\r\n    display: table;\r\n    position: relative;\r\n    width: 12em;\r\n    height: 18em;\r\n    padding: 0.5em;\r\n    margin: 0.5em;\r\n\r\n    font-family: Arial, Helvetica, sans-serif;\r\n\r\n    border: 1px solid black;\r\n    border-radius: 25px;\r\n}\r\n\r\n.card-text {\r\n    display: table-cell;\r\n    width: inherit;\r\n    height: inherit;\r\n    margin: 0.5em;\r\n    padding: 0.5em;\r\n    \r\n    text-align: center;\r\n    vertical-align: middle;\r\n\r\n    border-radius: 20px;\r\n}\r\n\r\n/* Question card */\r\n.card-question .card-text {\r\n    background-color: black;\r\n    color: white;\r\n}\r\n\r\n.card-text .card-pick {\r\n    /*padding: 0.5em;*/\r\n    /*padding-bottom: 0.5em;*/\r\n\r\n    min-width: 2em;\r\n    height: 2em;\r\n\r\n    color: white;\r\n    position: absolute;\r\n    bottom: 0;\r\n    right: 0;\r\n\r\n    border-top-left-radius: 20px;\r\n    border-left: 1px solid white;\r\n    border-top: 1px solid white;\r\n}\r\n\r\n/* Answer card */\r\n.card-answer {\r\n    background-color: black;\r\n}\r\n\r\n.card-answer .card-text {\r\n    background-color: white;\r\n    color: black;\r\n    border: 1px solid black;\r\n}", ""]);
-
-// exports
-
-
-/*** EXPORTS FROM exports-loader ***/
-module.exports = module.exports.toString();
-
-/***/ }),
-
 /***/ 143:
 /***/ (function(module, exports) {
 
@@ -58,7 +40,7 @@ __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_1__angular_platform_browser_dyna
 
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(11);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__cards_against_humanity_cards_against_humanity_component__ = __webpack_require__(90);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__cards_against_humanity_cards_against_humanity_component__ = __webpack_require__(91);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return AppComponent; });
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -93,13 +75,13 @@ AppComponent = __decorate([
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_platform_browser__ = __webpack_require__(28);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_core__ = __webpack_require__(11);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_forms__ = __webpack_require__(150);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__angular_http__ = __webpack_require__(86);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__angular_router__ = __webpack_require__(87);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__cards_service__ = __webpack_require__(91);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__angular_http__ = __webpack_require__(87);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__angular_router__ = __webpack_require__(88);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__cards_service__ = __webpack_require__(92);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__app_component__ = __webpack_require__(152);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__cards_against_humanity_cards_against_humanity_component__ = __webpack_require__(90);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__question_card_question_card_component__ = __webpack_require__(92);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__answer_card_answer_card_component__ = __webpack_require__(88);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__cards_against_humanity_cards_against_humanity_component__ = __webpack_require__(91);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__question_card_question_card_component__ = __webpack_require__(93);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__answer_card_answer_card_component__ = __webpack_require__(89);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return AppModule; });
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -215,7 +197,7 @@ exports = module.exports = __webpack_require__(23)();
 
 
 // module
-exports.push([module.i, ".answer-list {\r\n    float: left;\r\n    margin-right: 5px;\r\n}", ""]);
+exports.push([module.i, "/* Board */\r\n.board-back {\r\n    background: url(\"/assets/board-noise.jpg\");\r\n\r\n    z-index: 99;\r\n}\r\n\r\n.board {\r\n    height: 40em;\r\n    border: 20px solid rgb(80, 30, 50);\r\n    background-color: rgba(20, 110, 20, 0.9);\r\n\r\n    box-shadow: inset 0 0 4em black;\r\n\r\n    padding: 1em;\r\n\r\n    z-index: 98;\r\n}\r\n\r\n.card {\r\n    z-index: 90;\r\n}\r\n\r\n/* Answers */\r\n.answers {\r\n    float: left;\r\n    position: relative;\r\n    left: 0;\r\n    bottom: -10em;\r\n}\r\n\r\n.answers > .answer:not(:first-child) {\r\n    /* The cards collapse on each other */\r\n    margin-left: -4em;\r\n}\r\n\r\n.answer {\r\n    float: left;\r\n}\r\n\r\n.answer:hover {\r\n    /* Bring to front when hovered */\r\n    position: relative;\r\n    z-index: 89;\r\n\r\n}", ""]);
 
 // exports
 
@@ -242,7 +224,7 @@ module.exports = "<app-cards-against-humanity>\n    \n</app-cards-against-humani
 /***/ 217:
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"btn-block\">\n<button (click)=\"newGame()\" class=\"btn btn-primary\">New Game</button>\n<button (click)=\"newDeal()\" class=\"btn btn-primary\">New Deal</button>\n</div>\n    \n\n<h1>\n    Bienvenue sur Cards Against Humanity\n</h1>\n\n<h2>Question</h2>\n\n<div *ngIf=\"currentQuestion\">\n    <app-question-card [card]=\"currentQuestion\">\n    </app-question-card>\n</div>\n\n<h2>\n    Answers\n</h2>\n\n<div *ngIf=\"currentAnswers\">\n    <div *ngFor=\"let a of currentAnswers\" >\n        <app-answer-card [card]=\"a\" class=\"answer-list\">\n        </app-answer-card>\n    </div>\n</div>"
+module.exports = "<div class=\"board-back\">\n\n    <div class=\"board\">\n\n    <div class=\"pull-right\">\n        <button (click)=\"newGame()\" class=\"btn btn-block btn-success\">New Game</button>\n        <button (click)=\"newDeal()\" class=\"btn btn-block btn-success\">New Deal</button>\n    </div>\n\n        <div *ngIf=\"currentQuestion\">\n            <app-question-card [card]=\"currentQuestion\" class=\"question card-flat\">\n            </app-question-card>\n        </div>\n\n        <div *ngIf=\"currentAnswers\" class=\"answers\">\n            \n            <ng-container *ngFor=\"let a of currentAnswers\">\n                \n                <app-answer-card [card]=\"a\" class=\"answer card-hand\">\n                </app-answer-card>\n                \n            </ng-container>\n            \n        </div>\n    </div>\n\n</div>"
 
 /***/ }),
 
@@ -265,7 +247,7 @@ module.exports = __webpack_require__(144);
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_app_card__ = __webpack_require__(89);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_app_card__ = __webpack_require__(90);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return AnswerCard; });
 /**
  * This class represents an answer card.
@@ -297,7 +279,7 @@ var AnswerCard = (function (_super) {
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_app_card__ = __webpack_require__(89);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_app_card__ = __webpack_require__(90);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return QuestionCard; });
 /**
  * This class represents a question. This is basically some text with blanks or
@@ -328,7 +310,25 @@ var QuestionCard = (function (_super) {
 
 /***/ }),
 
-/***/ 88:
+/***/ 75:
+/***/ (function(module, exports, __webpack_require__) {
+
+exports = module.exports = __webpack_require__(23)();
+// imports
+
+
+// module
+exports.push([module.i, "/* Global cards style */\r\n.card {\r\n    display: table;\r\n    position: relative;\r\n    width: 12em;\r\n    height: 16em;\r\n    padding: 0.5em;\r\n\r\n    font-family: Arial, Helvetica, sans-serif;\r\n\r\n    border: 1px solid black;\r\n    border-radius: 2em;\r\n\r\n    background-color: white;\r\n\r\n}\r\n\r\n.card-text {\r\n    display: table-cell;\r\n    width: inherit;\r\n    height: inherit;\r\n    margin: 0.5em;\r\n    padding: 0.5em;\r\n    \r\n    text-align: center;\r\n    vertical-align: middle;\r\n\r\n    border: 1px solid black;\r\n    border-radius: 1.5em;\r\n}\r\n\r\n/* Question card */\r\n.card-question {\r\n    background: white;\r\n\r\n    box-shadow: 0em 0em 1em black;\r\n}\r\n\r\n.card-question .card-text {\r\n    background-color: black;\r\n    color: white;\r\n}\r\n\r\n.card-text .card-pick {\r\n    /*padding: 0.5em;*/\r\n    /*padding-bottom: 0.5em;*/\r\n\r\n    min-width: 2.5em;\r\n    height: 2.5em;\r\n\r\n    color: white;\r\n    position: absolute;\r\n    bottom: 0;\r\n    right: 0;\r\n\r\n    border-top-left-radius: 20px;\r\n    border-left: 1px solid white;\r\n    border-top: 1px solid white;\r\n}\r\n\r\n/* Answer card */\r\n.card-answer {\r\n    background-color: black;\r\n\r\n    box-shadow: 1em 1em 4em black;\r\n}\r\n\r\n.card-answer .card-text {\r\n    background-color: white;\r\n    color: black;\r\n}\r\n\r\n.card-answer:hover {\r\n    box-shadow: 0 0 4em white;\r\n}", ""]);
+
+// exports
+
+
+/*** EXPORTS FROM exports-loader ***/
+module.exports = module.exports.toString();
+
+/***/ }),
+
+/***/ 89:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -361,7 +361,7 @@ AnswerCardComponent = __decorate([
     __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Y" /* Component */])({
         selector: 'app-answer-card',
         template: __webpack_require__(215),
-        styles: [__webpack_require__(210), __webpack_require__(104)]
+        styles: [__webpack_require__(210), __webpack_require__(75)]
     }),
     __metadata("design:paramtypes", [])
 ], AnswerCardComponent);
@@ -371,7 +371,7 @@ var _a;
 
 /***/ }),
 
-/***/ 89:
+/***/ 90:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -390,18 +390,18 @@ var Card = (function () {
 
 /***/ }),
 
-/***/ 90:
+/***/ 91:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(11);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_router__ = __webpack_require__(87);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_router__ = __webpack_require__(88);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_common__ = __webpack_require__(41);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__cards_service__ = __webpack_require__(91);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__cards_service__ = __webpack_require__(92);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_app_question_card__ = __webpack_require__(58);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5_app_answer_card__ = __webpack_require__(57);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__question_card_question_card_component__ = __webpack_require__(92);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__answer_card_answer_card_component__ = __webpack_require__(88);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__question_card_question_card_component__ = __webpack_require__(93);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__answer_card_answer_card_component__ = __webpack_require__(89);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return CardsAgainstHumanityComponent; });
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -516,7 +516,7 @@ CardsAgainstHumanityComponent = __decorate([
     __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Y" /* Component */])({
         selector: 'app-cards-against-humanity',
         template: __webpack_require__(217),
-        styles: [__webpack_require__(212)],
+        styles: [__webpack_require__(212), __webpack_require__(75)],
         providers: [
             __WEBPACK_IMPORTED_MODULE_3__cards_service__["a" /* CardsService */]
         ],
@@ -533,12 +533,12 @@ var _a, _b, _c;
 
 /***/ }),
 
-/***/ 91:
+/***/ 92:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(11);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_http__ = __webpack_require__(86);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_http__ = __webpack_require__(87);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_rxjs_Rx__ = __webpack_require__(220);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_rxjs_Rx___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2_rxjs_Rx__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__question_card__ = __webpack_require__(58);
@@ -608,7 +608,7 @@ var _a;
 
 /***/ }),
 
-/***/ 92:
+/***/ 93:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -641,7 +641,7 @@ QuestionCardComponent = __decorate([
     __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Y" /* Component */])({
         selector: 'app-question-card',
         template: __webpack_require__(218),
-        styles: [__webpack_require__(104)]
+        styles: [__webpack_require__(75)]
     }),
     __metadata("design:paramtypes", [])
 ], QuestionCardComponent);
