@@ -1,14 +1,23 @@
-<h1>Question</h1>
+<div class="btn-block">
+<button (click)="newGame()" class="btn btn-primary">New Game</button>
+<button (click)="newDeal()" class="btn btn-primary">New Deal</button>
+</div>
+    
+
+<h1>
+    Bienvenue sur Cards Against Humanity
+</h1>
+
+<h2>Question</h2>
 
 <div *ngIf="currentQuestion">
     <app-question-card [card]="currentQuestion">
-        
     </app-question-card>
 </div>
 
-<h1>
+<h2>
     Answers
-</h1>
+</h2>
 
 <div *ngIf="currentAnswers">
     <div *ngFor="let a of currentAnswers" >

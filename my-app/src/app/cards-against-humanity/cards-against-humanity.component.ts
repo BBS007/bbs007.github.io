@@ -2,19 +2,26 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Params } from '@angular/router';
 import { Location } from '@angular/common';
 
+// Services
 import { CardsService } from '../cards.service';
 
+// Classes
 import { QuestionCard } from "app/question-card";
 import { AnswerCard } from "app/answer-card";
 
+// Components
 import { QuestionCardComponent } from '../question-card/question-card.component';
 import { AnswerCardComponent } from '../answer-card/answer-card.component';
 
 @Component({
     selector: 'app-cards-against-humanity',
     templateUrl: './cards-against-humanity.component.html',
-    styleUrls: ['./cards-against-humanity.component.css'],
-    providers: [CardsService],
+    styleUrls: [
+        './cards-against-humanity.component.css'
+    ],
+    providers: [
+        CardsService
+    ],
     entryComponents: [
         QuestionCardComponent,
         AnswerCardComponent
@@ -30,24 +37,59 @@ export class CardsAgainstHumanityComponent implements OnInit {
     private currentQuestion: QuestionCard;
     private currentAnswers: AnswerCard[];
 
+    private promiseDone: Promise<Boolean>;
+
     constructor(
         private cardsService: CardsService,
         private route: ActivatedRoute,
         private location: Location
     ) { 
-        
-        this.cardsService.getQuestionCards().subscribe(res => {
-            this.questions = res;
-            this.currentQuestion = this.randomQuestion();
-        });
-
-        this.cardsService.getAnswserCards().subscribe(res => {
-            this.answers = res;
-            this.currentAnswers = this.randomAnswers();
-        });
-
         this.currentQuestion = null;
         this.currentAnswers = null;
+
+        // Init the cards and deal when the promises are resolved
+        this.initCardsLists()
+            .then(
+            (res) => {
+                this.newDeal();
+            }
+        );
+
+    }
+
+    /**
+     * Will fetch the lists in a promise.
+     * @return a promise that is resolved when lists are reset.
+     */
+    private initCardsLists(): Promise<Boolean[]> {
+
+        // Questions promise, resolved when the result is set
+        const promiseQuestions = new Promise<Boolean>((resolve) => {
+
+            this.cardsService.getQuestionCards().subscribe(res => {
+                this.questions = res;
+                console.log("Questions set");
+                resolve(true);
+            });
+
+        });
+        
+        // Answers promise, resolved when the result is set
+        const promiseAnswers = new Promise<Boolean>((resolve) => {
+
+            this.cardsService.getAnswserCards().subscribe(res => {
+                this.answers = res;
+                console.log("Answers set");
+                resolve(true);
+            });
+
+        });
+        
+        // This promise is resolved after both are resolved
+        return Promise.all([
+            promiseQuestions,
+            promiseAnswers
+        ]);
         
     }
 
@@ -63,7 +105,6 @@ export class CardsAgainstHumanityComponent implements OnInit {
             ret = this.questions.splice(randNumber, 1)[0];
         }
 
-        console.log(ret);
         return ret;
     }
 
@@ -85,8 +126,27 @@ export class CardsAgainstHumanityComponent implements OnInit {
             }
         }
 
-        console.log(ret);
         return ret;
+    }
+
+    public newDeal(): void {
+        console.log("New deal");
+        this.currentQuestion = this.randomQuestion();
+        this.currentAnswers = this.randomAnswers();
+        
+        console.log("Remaining questions " + this.questions.length);
+        console.log("Remaining answers " + this.answers.length);
+    }
+
+    public newGame(): void {
+        console.log("New game");
+        this.initCardsLists()
+            .then((res) => {
+                console.log("Promise res : " + res);
+                this.newDeal();
+        });
+            
+        
     }
 
 
