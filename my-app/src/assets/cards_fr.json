@@ -1,14 +1,89 @@
 {
     "blackCards": [
         {
-            "text": "A?",
+            "text": "Je suis devenu _, destructeur de_.",
+            "pick": 2
+        },
+        {
+            "text": "A suivre sur Eurosport: Les Championnats du Monde de_.",
+            "pick": 1
+        },
+        {
+            "text": "Comme indiqué dans son contrat, Johnny Hallyday ne chantera pas sans _ dans la loge.",
+            "pick": 1
+        },
+        {
+            "text": "_ serait terriblement imparfait sans _.",
+            "pick": 1
+        },
+        {
+            "text": "Dans son tout dernier numéro, Gérard Majax doit se sortir de _.",
+            "pick": 1
+        },
+        {
+            "text": "Le best-seller du mois de janvier : \"_ pour _ : Le Récit de l'Espoir\".",
+            "pick": 2
+        },
+        {
+            "text": "Quel est le plus généreux des cadeaux ?",
+            "pick": 1
+        },
+        {
+            "text": "Aventure, Romance, _. Par les Studios Disney, \"_\".",
+            "pick": 2
+        },
+        {
+            "text": "Je m'en serais tiré sans _.",
+            "pick": 1
+        },
+        {
+            "text": "Le dernier film de Luc Besson met en scène _ contre _.",
+            "pick": 2
+        },
+        {
+            "text": "Qu'est-ce qui peut être drôle avant de devenir bizarre ?",
+            "pick": 1
+        },
+        {
+            "text": "Dans les siècles à venir, les historiens s'accorderont pour dire que _ a marqué le début du déclin américain.",
+            "pick": 1
+        },
+        {
+            "text": "Les membres de l'élite bourgeoise parisienne paient des milliers d'euros pour essayer _.",
+            "pick": 1
+        },
+        {
+            "text": "Ce mois-ci dans Gala : \"Pimentez votre vie sexuelle en amenant _ dans le lit\".",
+            "pick": 1
+        },
+        {
+            "text": "Jacadi a dit _.",
+            "pick": 1
+        },
+        {
+            "text": "Si Dieu ne voulait pas que l'on aime _, il ne nous aurait pas donné _.",
+            "pick": 2
+        },
+        {
+            "text": "Que Dieu bénisse la France et _.",
+            "pick": 1
+        },
+        {
+            "text": "Une étude fascinante a démontré que les chimpanzés ont développé leur propre version primitive de _.",
+            "pick": 1
+        },
+        {
+            "text": "Toute ma vie, j'ai eu comme objectif _ avant que tout ça ne soit ruiné par _.",
+            "pick": 2
+        },
+        {
+            "text": "La semaine prochaine dans C'est quoi l'amour: Comment discuter avec votre enfant de _.",
             "pick": 1
         },
         {
             "text": "B?",
             "pick": 1
-        }
-        
+        },
     ],
     "whiteCards": [
         "A",
