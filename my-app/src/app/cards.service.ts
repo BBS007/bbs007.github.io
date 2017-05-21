@@ -17,7 +17,10 @@ export class CardsService {
 
     // Urls for different languages
     url_en: string = '../assets/cards_en.json';
-    url_fr: string = '../assets/cards_en.json';
+    url_fr: string = '../assets/cards_fr.json';
+
+    // Current lang
+    currentLang: string;
 
     // Observables
     dataQuestion: Observable<QuestionCard[]>;
@@ -26,14 +29,36 @@ export class CardsService {
     constructor(private http: Http) { }
 
     // Choose the url according to the current lang
-    private chooseUrl(): string {
-        return this.url_fr;
+    private chooseUrl(lang: string = "fr"): string {
+        var ret;
+
+        switch (lang) {
+            case "fr":
+                ret = this.url_fr;
+                break;
+            case "en":
+                ret = this.url_en
+                break;
+            default:
+                ret = this.url_fr;
+        }
+
+        return ret;
     }
 
-    public getQuestionCards(): Observable<QuestionCard[]> {
-        var url = this.chooseUrl();
+    public setCurrentLang(lang: string): void {
+        this.currentLang = lang;
+    }
 
-        if (!this.dataQuestion) {
+    private isLangChanged(lang: string): boolean {
+        return this.currentLang != lang;
+    }
+
+    public getQuestionCards(lang:string = "fr"): Observable<QuestionCard[]> {
+        var url = this.chooseUrl(lang);
+
+        if (!this.dataQuestion || this.isLangChanged(lang)) {
+
             this.dataQuestion = this.http.get(url)
                 .map(res => { 
                     return res.json().blackCards.map(elt => {
@@ -46,10 +71,11 @@ export class CardsService {
     }
 
 
-    public getAnswserCards(): Observable<AnswerCard[]> {
-        var url = this.chooseUrl();
+    public getAnswserCards(lang:string = "fr"): Observable<AnswerCard[]> {
+        var url = this.chooseUrl(lang);
         
-        if (!this.dataAnswer) {
+        if (!this.dataAnswer || this.isLangChanged(lang)) {
+
             this.dataAnswer = this.http.get(url)
                 .map(res => {
                     return res.json().whiteCards.map(elt => {

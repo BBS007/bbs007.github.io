@@ -18,7 +18,8 @@ import { AnswerCardComponent } from '../answer-card/answer-card.component';
     templateUrl: './cards-against-humanity.component.html',
     styleUrls: [
         './cards-against-humanity.component.css',
-        '../question-card/question-card.component.css'
+        '../question-card/question-card.component.css',
+        '../flags/flags.min.css'
     ],
     providers: [
         CardsService
@@ -32,30 +33,36 @@ import { AnswerCardComponent } from '../answer-card/answer-card.component';
 
 export class CardsAgainstHumanityComponent implements OnInit {
 
+    // The complete list
     private questions: QuestionCard[];
     private answers: AnswerCard[];
 
+    // Current list displayed
     private currentQuestion: QuestionCard;
     private currentAnswers: AnswerCard[];
 
-    private promiseDone: Promise<Boolean>;
+    // The lang support
+    private lang: string;
 
     constructor(
         private cardsService: CardsService,
         private route: ActivatedRoute,
         private location: Location
     ) { 
+        // Init lists to null so nothing is displayed
         this.currentQuestion = null;
         this.currentAnswers = null;
 
-        // Init the cards and deal when the promises are resolved
-        this.initCardsLists()
-            .then(
-            (res) => {
-                this.newDeal();
-            }
-        );
+        // Default lang is fr
+        this.lang = "fr";
 
+        // Start a new game
+        this.newGame();
+
+    }
+
+    ngOnInit(): void {
+        
     }
 
     /**
@@ -67,7 +74,7 @@ export class CardsAgainstHumanityComponent implements OnInit {
         // Questions promise, resolved when the result is set
         const promiseQuestions = new Promise<Boolean>((resolve) => {
 
-            this.cardsService.getQuestionCards().subscribe(res => {
+            this.cardsService.getQuestionCards(this.lang).subscribe(res => {
                 this.questions = res;
                 console.log("Questions set");
                 resolve(true);
@@ -78,7 +85,7 @@ export class CardsAgainstHumanityComponent implements OnInit {
         // Answers promise, resolved when the result is set
         const promiseAnswers = new Promise<Boolean>((resolve) => {
 
-            this.cardsService.getAnswserCards().subscribe(res => {
+            this.cardsService.getAnswserCards(this.lang).subscribe(res => {
                 this.answers = res;
                 console.log("Answers set");
                 resolve(true);
@@ -123,7 +130,7 @@ export class CardsAgainstHumanityComponent implements OnInit {
 
         } else {
             for (var i = 0; i < howMany; ++i) {
-                ret.push(new AnswerCard("No more answers"));
+                ret[i] = new AnswerCard("No more answers");
             }
         }
 
@@ -143,16 +150,16 @@ export class CardsAgainstHumanityComponent implements OnInit {
         console.log("New game");
         this.initCardsLists()
             .then((res) => {
-                console.log("Promise res : " + res);
+                this.cardsService.setCurrentLang(this.lang);
                 this.newDeal();
         });
-            
-        
     }
 
-
-    ngOnInit(): void {
+    public switchLang(lang: string = "fr"): void {
+        console.log("New lang " + lang);
+        this.lang = lang;
         
+        this.newGame();
     }
 
 }

@@ -1,0 +1,22 @@
+{
+    "blackCards": [
+        {
+            "text": "A?",
+            "pick": 1
+        },
+        {
+            "text": "B?",
+            "pick": 1
+        }
+        
+    ],
+    "whiteCards": [
+        "A",
+        "B",
+        "C",
+        "D",
+        "E",
+        "F",
+        "G"
+    ]
+}
