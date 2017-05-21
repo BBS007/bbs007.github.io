@@ -58,7 +58,7 @@ var AppComponent = (function () {
 AppComponent = __decorate([
     __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Y" /* Component */])({
         selector: 'app-root',
-        template: __webpack_require__(216),
+        template: __webpack_require__(217),
         styles: [__webpack_require__(211)],
         entryComponents: [__WEBPACK_IMPORTED_MODULE_1__cards_against_humanity_cards_against_humanity_component__["a" /* CardsAgainstHumanityComponent */]]
     })
@@ -156,7 +156,7 @@ var environment = {
 /***/ 210:
 /***/ (function(module, exports, __webpack_require__) {
 
-exports = module.exports = __webpack_require__(23)();
+exports = module.exports = __webpack_require__(18)();
 // imports
 
 
@@ -174,7 +174,7 @@ module.exports = module.exports.toString();
 /***/ 211:
 /***/ (function(module, exports, __webpack_require__) {
 
-exports = module.exports = __webpack_require__(23)();
+exports = module.exports = __webpack_require__(18)();
 // imports
 
 
@@ -192,7 +192,7 @@ module.exports = module.exports.toString();
 /***/ 212:
 /***/ (function(module, exports, __webpack_require__) {
 
-exports = module.exports = __webpack_require__(23)();
+exports = module.exports = __webpack_require__(18)();
 // imports
 
 
@@ -207,35 +207,60 @@ module.exports = module.exports.toString();
 
 /***/ }),
 
-/***/ 215:
-/***/ (function(module, exports) {
+/***/ 213:
+/***/ (function(module, exports, __webpack_require__) {
 
-module.exports = "<div class=\"card card-answer\">\n  <div class=\"card-text\">\n    {{card.text}}\n  </div>\n</div>"
+exports = module.exports = __webpack_require__(18)();
+// imports
+
+
+// module
+exports.push([module.i, "/*!\n * Generated with CSS Flag Sprite generator (https://www.flag-sprites.com/)\n */.flag{display:inline-block;width:32px;height:32px;background:url(" + __webpack_require__(486) + ") no-repeat}.flag.flag-us{background-position:-32px 0}.flag.flag-fr{background-position:0 0}", ""]);
+
+// exports
+
+
+/*** EXPORTS FROM exports-loader ***/
+module.exports = module.exports.toString();
 
 /***/ }),
 
 /***/ 216:
 /***/ (function(module, exports) {
 
-module.exports = "<app-cards-against-humanity>\n    \n</app-cards-against-humanity>\n"
+module.exports = "<div class=\"card card-answer\">\n  <div class=\"card-text\">\n    {{card.text}}\n  </div>\n</div>"
 
 /***/ }),
 
 /***/ 217:
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"board-back\">\n\n    <div class=\"board\">\n\n    <div class=\"pull-right\">\n        <button (click)=\"newGame()\" class=\"btn btn-block btn-success\">New Game</button>\n        <button (click)=\"newDeal()\" class=\"btn btn-block btn-success\">New Deal</button>\n    </div>\n\n        <div *ngIf=\"currentQuestion\">\n            <app-question-card [card]=\"currentQuestion\" class=\"question card-flat\">\n            </app-question-card>\n        </div>\n\n        <div *ngIf=\"currentAnswers\" class=\"answers\">\n            \n            <ng-container *ngFor=\"let a of currentAnswers\">\n                \n                <app-answer-card [card]=\"a\" class=\"answer card-hand\">\n                </app-answer-card>\n                \n            </ng-container>\n            \n        </div>\n    </div>\n\n</div>"
+module.exports = "<app-cards-against-humanity>\n    \n</app-cards-against-humanity>\n"
 
 /***/ }),
 
 /***/ 218:
 /***/ (function(module, exports) {
 
+module.exports = "<div class=\"board-back\">\n\n    <div class=\"board\">\n\n        <div class=\"pull-right\">\n            <div class=\"btn-group btn-block\">\n                <button (click)=\"switchLang('fr')\" class=\"btn btn-default\" [class.active]=\"lang == 'fr'\">\n                    <img src=\"/assets/blank.gif\" alt=\"French\" class=\"flag flag-fr\"/>\n                </button>\n                <button (click)=\"switchLang('en')\" class=\"btn btn-default\" [class.active]=\"lang == 'en'\">\n                    <img src=\"/assets/blank.gif\" alt=\"English\" class=\"flag flag-us\"/>\n                </button>\n            </div>\n\n            <button (click)=\"newGame()\" class=\"btn btn-block btn-success\">New Game</button>\n            <button (click)=\"newDeal()\" class=\"btn btn-block btn-success\">New Deal</button>\n        </div>\n\n        <div *ngIf=\"currentQuestion\">\n            <app-question-card [card]=\"currentQuestion\" class=\"question card-flat\">\n            </app-question-card>\n        </div>\n\n        <div *ngIf=\"currentAnswers\" class=\"answers\">\n\n            <ng-container *ngFor=\"let a of currentAnswers\">\n\n                <app-answer-card [card]=\"a\" class=\"answer card-hand\">\n                </app-answer-card>\n\n            </ng-container>\n\n        </div>\n    </div>\n\n</div>"
+
+/***/ }),
+
+/***/ 219:
+/***/ (function(module, exports) {
+
 module.exports = "<div class=\"card card-question\">\n  <div class=\"card-text\">\n    {{card.text}}\n\n    <div class=\"card-pick\">\n      {{card.pick}}\n    </div>\n  </div>\n\n</div>"
 
 /***/ }),
 
-/***/ 487:
+/***/ 486:
+/***/ (function(module, exports) {
+
+module.exports = "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEAAAAAgCAYAAACinX6EAAAEtklEQVR4nO2ZX4gVVRzHP2fmXnc1795NEpcSgh7KkupZSSTxwUDBRbCHRcFdE3pIXVE3X8QyXXTFJEpwV2LTIAs2UFnxoYiwp6A/UJH4kEpokLJ/7r+5c+fMOT3M3L2z6/XO3Ntw74N+X37nzD3nfH/zne/5M3OF1ppHGUarE2g1HgvQ6gRaDQGYQJsfmwkXsP1yy/gTQMfatScnTDPcDFev7oo08s0NW8IbGYLnLp1fBBCVvxo+m/dzQ/0wDLouji5KAGnDMFiz5sXGBqqCha+vDG1T/OMGQNrLxWB09C3OnfuBrVtfqysu2R/toVSFGE0ngDYpFbbtMDVVQOPNiyA0IOrYLZ1/7/sd/U5CIPyyBhKdHeiSDZ71kVIxMvId27at5vjQOHv632BoaJz+YDw+Tv+eSv340DgCmHj3g9mJMucGgjfk/250duD8eQOgLQGglMKyShSLTvS7rAFdtB+8Fiiroo2SslJXit7e1Rw9eomBgQ0MDkaLx45dBvdBrlAUi+B4/AkAx1FYloNlxSSAVaz9ezIJpYoAjqM4ceIK+/at59Chrzl4sDtSBFj0yeHGE71wxhNASpdcziafLzU+WABuvlC7gWmgAw6Q0mX37nXs3/8lg4ObGRiIFg8c+Ip7W96pOz8jtRB55x+AsgCKbNYin/fsVG0dqAcqTAAh0HZFbCkVAwMXOHJkMzt3nuPUqS2RIoBy8vUnKECXPP4ZB2QyxdgcoEME0FrPEcDl8OE36esbYXh4O319ZyPFHTvOsuT7TxtPVHxRXgNcslm7yhpQ9kJ9nnBzZQGq99euQpUqAjiOS2/vMMMj2+npOc3n59+mp+c050MiaO6u3ADCH1vrSjlYn3NdtLeD7a1TM4tgJlPEtssClJMul+uDKjzEAX4i2pVQqojtOIozZ/ro3vghY2O72Nh9irGxnXR3e/Xumfrs65s2fYRuL0RPsfwcpIMO7gJSSrJZhePIGr2jQ+Vrz0tRKoFZOflKKVm//iQXL+5m3bohrlzZGykCPHP928YTFaLigFyugOO4jQ8WgDsxVZs3mcRMp2bqjqO4fLmfFSve49q1g5HjqlXvc/upl+pPMJnE7PD4BfBCV9fe67lcCSlrC2BZH0ca//cnn/dL1Y+PIpFApJ5g+c2flgFE5a+G6/O/qbsPPv+zf/24zHeARGuNUvF8HdJKhTTQ6IDb7tw5hmE0981cKQWm6U0BV7poTWwCEEEA5VR2gVtPv0pCuuhSPCfRMIh5SWQyAZR3ASkBk9i+Dyo1eyOZC61RbsUByvUcqFWdU2AuR/Clpya/iXJn7QIa04zPAVrrh5MDQghkYMdZ+vcvtLe3x8IdFZZlwYIF/hRwJaaZiM8BEcYJOuDW4uXMb2tDF6x4+EMgFsyn4L2Oe98ElVII8X9O//VmILxFyIer1OwTXFP4vYeUAM+yzeSfK8DSu7+STqebmABMT09DZ2dQAEEqFc88NFILQ9uowDS53fUKnR2pGq3jx2QmC3gOcEGTzU6Hd5qcjDT4VCYT2sa/fRfASbnc11ORxo4LOgUUcQWwBHgZWNzUDOAe8Jtfbhm/wPswmfJjM2EDWb/cMn7x+M/RRxyPvAD/ASV+uFB9PhhdAAAAAElFTkSuQmCC"
+
+/***/ }),
+
+/***/ 489:
 /***/ (function(module, exports, __webpack_require__) {
 
 module.exports = __webpack_require__(144);
@@ -313,7 +338,7 @@ var QuestionCard = (function (_super) {
 /***/ 75:
 /***/ (function(module, exports, __webpack_require__) {
 
-exports = module.exports = __webpack_require__(23)();
+exports = module.exports = __webpack_require__(18)();
 // imports
 
 
@@ -360,7 +385,7 @@ __decorate([
 AnswerCardComponent = __decorate([
     __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Y" /* Component */])({
         selector: 'app-answer-card',
-        template: __webpack_require__(215),
+        template: __webpack_require__(216),
         styles: [__webpack_require__(210), __webpack_require__(75)]
     }),
     __metadata("design:paramtypes", [])
@@ -425,18 +450,19 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 
 var CardsAgainstHumanityComponent = (function () {
     function CardsAgainstHumanityComponent(cardsService, route, location) {
-        var _this = this;
         this.cardsService = cardsService;
         this.route = route;
         this.location = location;
+        // Init lists to null so nothing is displayed
         this.currentQuestion = null;
         this.currentAnswers = null;
-        // Init the cards and deal when the promises are resolved
-        this.initCardsLists()
-            .then(function (res) {
-            _this.newDeal();
-        });
+        // Default lang is fr
+        this.lang = "fr";
+        // Start a new game
+        this.newGame();
     }
+    CardsAgainstHumanityComponent.prototype.ngOnInit = function () {
+    };
     /**
      * Will fetch the lists in a promise.
      * @return a promise that is resolved when lists are reset.
@@ -445,7 +471,7 @@ var CardsAgainstHumanityComponent = (function () {
         var _this = this;
         // Questions promise, resolved when the result is set
         var promiseQuestions = new Promise(function (resolve) {
-            _this.cardsService.getQuestionCards().subscribe(function (res) {
+            _this.cardsService.getQuestionCards(_this.lang).subscribe(function (res) {
                 _this.questions = res;
                 console.log("Questions set");
                 resolve(true);
@@ -453,7 +479,7 @@ var CardsAgainstHumanityComponent = (function () {
         });
         // Answers promise, resolved when the result is set
         var promiseAnswers = new Promise(function (resolve) {
-            _this.cardsService.getAnswserCards().subscribe(function (res) {
+            _this.cardsService.getAnswserCards(_this.lang).subscribe(function (res) {
                 _this.answers = res;
                 console.log("Answers set");
                 resolve(true);
@@ -487,7 +513,7 @@ var CardsAgainstHumanityComponent = (function () {
         }
         else {
             for (var i = 0; i < howMany; ++i) {
-                ret.push(new __WEBPACK_IMPORTED_MODULE_5_app_answer_card__["a" /* AnswerCard */]("No more answers"));
+                ret[i] = new __WEBPACK_IMPORTED_MODULE_5_app_answer_card__["a" /* AnswerCard */]("No more answers");
             }
         }
         return ret;
@@ -504,19 +530,23 @@ var CardsAgainstHumanityComponent = (function () {
         console.log("New game");
         this.initCardsLists()
             .then(function (res) {
-            console.log("Promise res : " + res);
+            _this.cardsService.setCurrentLang(_this.lang);
             _this.newDeal();
         });
     };
-    CardsAgainstHumanityComponent.prototype.ngOnInit = function () {
+    CardsAgainstHumanityComponent.prototype.switchLang = function (lang) {
+        if (lang === void 0) { lang = "fr"; }
+        console.log("New lang " + lang);
+        this.lang = lang;
+        this.newGame();
     };
     return CardsAgainstHumanityComponent;
 }());
 CardsAgainstHumanityComponent = __decorate([
     __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Y" /* Component */])({
         selector: 'app-cards-against-humanity',
-        template: __webpack_require__(217),
-        styles: [__webpack_require__(212), __webpack_require__(75)],
+        template: __webpack_require__(218),
+        styles: [__webpack_require__(212), __webpack_require__(75), __webpack_require__(213)],
         providers: [
             __WEBPACK_IMPORTED_MODULE_3__cards_service__["a" /* CardsService */]
         ],
@@ -539,7 +569,7 @@ var _a, _b, _c;
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(11);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_http__ = __webpack_require__(87);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_rxjs_Rx__ = __webpack_require__(220);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_rxjs_Rx__ = __webpack_require__(221);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_rxjs_Rx___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2_rxjs_Rx__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__question_card__ = __webpack_require__(58);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__answer_card__ = __webpack_require__(57);
@@ -566,15 +596,34 @@ var CardsService = (function () {
         this.http = http;
         // Urls for different languages
         this.url_en = '../assets/cards_en.json';
-        this.url_fr = '../assets/cards_en.json';
+        this.url_fr = '../assets/cards_fr.json';
     }
     // Choose the url according to the current lang
-    CardsService.prototype.chooseUrl = function () {
-        return this.url_fr;
+    CardsService.prototype.chooseUrl = function (lang) {
+        if (lang === void 0) { lang = "fr"; }
+        var ret;
+        switch (lang) {
+            case "fr":
+                ret = this.url_fr;
+                break;
+            case "en":
+                ret = this.url_en;
+                break;
+            default:
+                ret = this.url_fr;
+        }
+        return ret;
     };
-    CardsService.prototype.getQuestionCards = function () {
-        var url = this.chooseUrl();
-        if (!this.dataQuestion) {
+    CardsService.prototype.setCurrentLang = function (lang) {
+        this.currentLang = lang;
+    };
+    CardsService.prototype.isLangChanged = function (lang) {
+        return this.currentLang != lang;
+    };
+    CardsService.prototype.getQuestionCards = function (lang) {
+        if (lang === void 0) { lang = "fr"; }
+        var url = this.chooseUrl(lang);
+        if (!this.dataQuestion || this.isLangChanged(lang)) {
             this.dataQuestion = this.http.get(url)
                 .map(function (res) {
                 return res.json().blackCards.map(function (elt) {
@@ -584,9 +633,10 @@ var CardsService = (function () {
         }
         return this.dataQuestion;
     };
-    CardsService.prototype.getAnswserCards = function () {
-        var url = this.chooseUrl();
-        if (!this.dataAnswer) {
+    CardsService.prototype.getAnswserCards = function (lang) {
+        if (lang === void 0) { lang = "fr"; }
+        var url = this.chooseUrl(lang);
+        if (!this.dataAnswer || this.isLangChanged(lang)) {
             this.dataAnswer = this.http.get(url)
                 .map(function (res) {
                 return res.json().whiteCards.map(function (elt) {
@@ -640,7 +690,7 @@ __decorate([
 QuestionCardComponent = __decorate([
     __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Y" /* Component */])({
         selector: 'app-question-card',
-        template: __webpack_require__(218),
+        template: __webpack_require__(219),
         styles: [__webpack_require__(75)]
     }),
     __metadata("design:paramtypes", [])
@@ -651,5 +701,5 @@ var _a;
 
 /***/ })
 
-},[487]);
+},[489]);
 //# sourceMappingURL=main.bundle.js.map
