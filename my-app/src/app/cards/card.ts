@@ -11,4 +11,8 @@ export abstract class Card {
         this.text = text;
     }
 
+    protected getText(): string {
+        return this.text;
+    }
+
 }

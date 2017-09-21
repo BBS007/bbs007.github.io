@@ -2,7 +2,7 @@
  * This class represents an answer card.
  */
 
-import { Card } from "app/card";
+import { Card } from "../card";
 
 export class AnswerCard extends Card {
 

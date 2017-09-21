@@ -1,0 +1,80 @@
+/* Global cards style */
+.card {
+    display: table;
+    position: relative;
+    width: 12em;
+    height: 16em;
+    padding: 0.5em;
+
+    font-family: Arial, Helvetica, sans-serif;
+
+    border: 1px solid black;
+    border-radius: 2em;
+
+    background-color: white;
+
+}
+
+.card-text {
+    display: table-cell;
+    width: inherit;
+    height: inherit;
+    margin: 0.5em;
+    padding: 0.5em;
+    
+    text-align: center;
+    vertical-align: middle;
+
+    border: 1px solid black;
+    border-radius: 1.5em;
+}
+
+/* Question card */
+.card-question {
+    background: white;
+
+    box-shadow: 0em 0em 1em black;
+}
+
+.card-question .card-text {
+    background-color: black;
+    color: white;
+}
+
+.card-text .card-pick {
+    /*padding: 0.5em;*/
+    /*padding-bottom: 0.5em;*/
+
+    min-width: 2.5em;
+    height: 2.5em;
+
+    color: white;
+    position: absolute;
+    bottom: 0;
+    right: 0;
+
+    border-top-left-radius: 20px;
+    border-left: 1px solid white;
+    border-top: 1px solid white;
+}
+
+/* Answer card */
+.card-answer {
+    background-color: black;
+
+    box-shadow: 1em 1em 4em black;
+}
+
+.card-answer .card-text {
+    background-color: white;
+    color: black;
+}
+
+.card-answer:hover {
+    box-shadow: 0 0 4em white;
+}
+
+/* Holder card */
+.card-holder {
+    background-color: rgba(255, 255, 255, 0.3);
+}

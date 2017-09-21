@@ -3,22 +3,23 @@ import { ActivatedRoute, Params } from '@angular/router';
 import { Location } from '@angular/common';
 
 // Services
-import { CardsService } from '../cards.service';
+import { CardsService } from 'app/cards/cards.service';
 
 // Classes
-import { QuestionCard } from "app/question-card";
-import { AnswerCard } from "app/answer-card";
+import { QuestionCard } from "app/cards/question-card/question-card";
+import { AnswerCard } from "app/cards/answer-card/answer-card";
 
 // Components
-import { QuestionCardComponent } from '../question-card/question-card.component';
-import { AnswerCardComponent } from '../answer-card/answer-card.component';
+import { QuestionCardComponent } from 'app/cards/question-card/question-card.component';
+import { AnswerCardComponent } from 'app/cards/answer-card/answer-card.component';
+import {HolderCardComponent} from 'app/cards/holder-card/holder-card.component'
 
 @Component({
     selector: 'app-cards-against-humanity',
     templateUrl: './cards-against-humanity.component.html',
     styleUrls: [
         './cards-against-humanity.component.css',
-        '../question-card/question-card.component.css',
+        '../cards/question-card/question-card.component.css',
         '../flags/flags.min.css'
     ],
     providers: [
@@ -26,7 +27,8 @@ import { AnswerCardComponent } from '../answer-card/answer-card.component';
     ],
     entryComponents: [
         QuestionCardComponent,
-        AnswerCardComponent
+        AnswerCardComponent,
+        HolderCardComponent
     ]
 })
 
@@ -141,6 +143,8 @@ export class CardsAgainstHumanityComponent implements OnInit {
         console.log("New deal");
         this.currentQuestion = this.randomQuestion();
         this.currentAnswers = this.randomAnswers();
+
+
         
         console.log("Remaining questions " + this.questions.length);
         console.log("Remaining answers " + this.answers.length);
@@ -160,6 +164,10 @@ export class CardsAgainstHumanityComponent implements OnInit {
         this.lang = lang;
         
         this.newGame();
+    }
+
+    private getBlanksAnswersArray(): number[] {
+        return Array(this.currentQuestion.getPick()).fill(0);
     }
 
 }

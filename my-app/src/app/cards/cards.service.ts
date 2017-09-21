@@ -9,8 +9,8 @@ import {Http, Response} from '@angular/http';
 import 'rxjs/Rx';
 import { Observable } from 'rxjs';
 
-import { QuestionCard } from './question-card'
-import { AnswerCard } from './answer-card'
+import { QuestionCard } from './question-card/question-card'
+import { AnswerCard } from './answer-card/answer-card'
 
 @Injectable()
 export class CardsService {

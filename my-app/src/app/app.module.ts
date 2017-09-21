@@ -5,13 +5,14 @@ import { HttpModule } from '@angular/http';
 import { RouterModule } from '@angular/router'
 
 // Services
-import { CardsService } from './cards.service';
+import { CardsService } from 'app/cards/cards.service';
 
 // Components
-import { AppComponent } from './app.component';
-import { CardsAgainstHumanityComponent } from './cards-against-humanity/cards-against-humanity.component';
-import { QuestionCardComponent } from './question-card/question-card.component';
-import { AnswerCardComponent } from './answer-card/answer-card.component';
+import { AppComponent } from 'app/app.component';
+import { CardsAgainstHumanityComponent } from 'app/cards-against-humanity/cards-against-humanity.component';
+import { QuestionCardComponent } from 'app/cards/question-card/question-card.component';
+import { AnswerCardComponent } from 'app/cards/answer-card/answer-card.component';
+import { HolderCardComponent } from 'app/cards/holder-card/holder-card.component';
 
 @NgModule({
     imports: [
@@ -29,7 +30,8 @@ import { AnswerCardComponent } from './answer-card/answer-card.component';
         AppComponent,
         CardsAgainstHumanityComponent,
         QuestionCardComponent,
-        AnswerCardComponent
+        AnswerCardComponent,
+        HolderCardComponent
     ],
     providers: [
         CardsService

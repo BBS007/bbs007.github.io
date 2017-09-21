@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 
-import { CardsAgainstHumanityComponent } from './cards-against-humanity/cards-against-humanity.component'
+import { CardsAgainstHumanityComponent } from 'app/cards-against-humanity/cards-against-humanity.component'
 
 @Component({
     selector: 'app-root',

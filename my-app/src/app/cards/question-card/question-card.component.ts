@@ -1,6 +1,6 @@
 import { Component, Input, OnInit } from '@angular/core';
 
-import { QuestionCard } from '../question-card';
+import { QuestionCard } from './question-card';
 
 @Component({
   selector: 'app-question-card',

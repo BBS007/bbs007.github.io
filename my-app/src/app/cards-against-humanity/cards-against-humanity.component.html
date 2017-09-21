@@ -2,6 +2,7 @@
 
     <div class="board">
 
+    
         <div class="pull-right">
             <div class="btn-group btn-block">
                 <button (click)="switchLang('fr')" class="btn btn-default" [class.active]="lang == 'fr'">
@@ -15,11 +16,21 @@
             <button (click)="newGame()" class="btn btn-block btn-success">New Game</button>
             <button (click)="newDeal()" class="btn btn-block btn-success">New Deal</button>
         </div>
+    
 
-        <div *ngIf="currentQuestion">
-            <app-question-card [card]="currentQuestion" class="question card-flat">
-            </app-question-card>
+        <div class="container-fluid">
+        <div class="row">
+            <div *ngIf="currentQuestion">
+                <app-question-card [card]="currentQuestion" class="col-sm-3">
+                </app-question-card>
+
+                <div *ngFor="let i of getBlanksAnswersArray()" >
+                    <app-holder-card class="col-sm-2">
+                    </app-holder-card>
+                </div>
+            </div>
         </div>
+    </div>
 
         <div *ngIf="currentAnswers" class="answers">
 

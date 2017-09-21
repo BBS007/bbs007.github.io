@@ -3,7 +3,7 @@
  * just requiring an answer.
  */
 
-import { Card } from "app/card";
+import { Card } from "../card";
 
 export class QuestionCard extends Card {
 
@@ -13,5 +13,9 @@ export class QuestionCard extends Card {
     constructor(text: string, pick: number) {
         super(text);
         this.pick = pick;
+    }
+
+    public getPick(): number {
+        return this.pick;
     }
 }
