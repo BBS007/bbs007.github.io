@@ -1,0 +1,58 @@
+<div class="board-back">
+
+  <div class="board">
+
+
+    <div class="pull-right">
+      <div class="btn-group btn-block">
+        <button (click)="switchLang('fr')" class="btn btn-default" [class.active]="lang == 'fr'">
+                        <img src="/assets/blank.gif" alt="French" class="flag flag-fr"/>
+                    </button>
+        <button (click)="switchLang('en')" class="btn btn-default" [class.active]="lang == 'en'">
+                        <img src="/assets/blank.gif" alt="English" class="flag flag-us"/>
+                    </button>
+      </div>
+
+      <button (click)="newGame()" class="btn btn-block btn-success">New Game</button>
+      <button (click)="newDeal()" class="btn btn-block btn-success">New Deal</button>
+    </div>
+
+
+    <div class="container-fluid">
+      <div class="row">
+        <div *ngIf="currentQuestion">
+          <app-question-card [card]="currentQuestion" class="col-sm-3">
+          </app-question-card>
+        </div>
+      </div>
+      <!-- </div>
+    
+            <div class="container-fluid"> -->
+      <div class="row row-margin">
+        <div *ngIf="currentQuestion">
+          <div *ngFor="let i of getBlanksAnswersArray()">
+            <app-holder-card [answer]="choosenAnswers[i]" (click)="onAnswerDismiss(i)" class="col-sm-3">
+            </app-holder-card>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+    <div *ngIf="currentQuestion">
+      {{getPreview()}}
+    </div>
+
+    <div *ngIf="currentAnswers" class="answers">
+
+      <ng-container *ngFor="let a of currentAnswers">
+
+        <app-answer-card [card]="a" (click)="onAnswerClick(a)" class="answer card-hand">
+        </app-answer-card>
+
+      </ng-container>
+
+    </div>
+  </div>
+
+</div>

@@ -13,6 +13,7 @@ import { CardsAgainstHumanityComponent } from 'app/cards-against-humanity/cards-
 import { QuestionCardComponent } from 'app/cards/question-card/question-card.component';
 import { AnswerCardComponent } from 'app/cards/answer-card/answer-card.component';
 import { HolderCardComponent } from 'app/cards/holder-card/holder-card.component';
+import { BoardComponent } from 'app/board/board.component';
 
 @NgModule({
     imports: [
@@ -31,7 +32,8 @@ import { HolderCardComponent } from 'app/cards/holder-card/holder-card.component
         CardsAgainstHumanityComponent,
         QuestionCardComponent,
         AnswerCardComponent,
-        HolderCardComponent
+        HolderCardComponent,
+        BoardComponent
     ],
     providers: [
         CardsService
