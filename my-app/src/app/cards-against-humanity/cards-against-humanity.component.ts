@@ -144,7 +144,12 @@ export class CardsAgainstHumanityComponent implements OnInit {
 
     public newDeal(): void {
         console.log("New deal");
+
         this.currentQuestion = this.randomQuestion();
+        while (this.currentQuestion.getPick() <= 2) {
+            this.currentQuestion = this.randomQuestion();
+        }
+
         this.currentAnswers = this.randomAnswers();
         this.choosenAnswers = new Array<AnswerCard>(this.currentQuestion.getPick());
 
@@ -212,18 +217,17 @@ export class CardsAgainstHumanityComponent implements OnInit {
 
             // Shift all existing cards until there is another blank
             var i = 0;
+            var tmpAnswers: Array<AnswerCard> = this.choosenAnswers.slice(0);
             while (index + i < this.choosenAnswers.length - 1 &&
-                this.choosenAnswers[index + i] != null) {
+                this.choosenAnswers[index + i + 1] != null) {
                 
-                this.choosenAnswers[index + i + 1] = this.choosenAnswers[i];
+                this.choosenAnswers[index + i + 1] = tmpAnswers[index + i];
                 ++i;
 
             }
             
             // Update the view
             this.choosenAnswers[index] = answer;
-
-            console.log(this.currentQuestion.getPreview(this.choosenAnswers));
 
         }
     }
