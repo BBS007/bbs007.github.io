@@ -219,7 +219,7 @@ export class CardsAgainstHumanityComponent implements OnInit {
             var i = 0;
             var tmpAnswers: Array<AnswerCard> = this.choosenAnswers.slice(0);
             while (index + i < this.choosenAnswers.length - 1 &&
-                this.choosenAnswers[index + i + 1] != null) {
+                this.choosenAnswers[index + i] != null) {
                 
                 this.choosenAnswers[index + i + 1] = tmpAnswers[index + i];
                 ++i;
