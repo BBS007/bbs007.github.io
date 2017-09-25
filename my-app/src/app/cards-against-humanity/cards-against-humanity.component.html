@@ -1,2 +1,24 @@
-<app-board>
-</app-board>
+<div class="jumbotron">
+    <h1 class="display">
+        Cards
+    </h1>
+    <p class="lead">A card game</p>
+
+    <hr>
+
+    <div>
+        <label> Username: </label>
+        <input [(ngModel)]="player.name" placeholder="username">
+    </div>
+
+    <div>
+        <label>Language: </label>
+        <div *ngIf="languages" >
+        <select>
+            <option *ngFor="let lang of languages">{{lang.text}}</option>
+        </select>
+        </div>
+    </div>
+
+
+</div>

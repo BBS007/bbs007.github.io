@@ -2,10 +2,16 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Params } from '@angular/router';
 import { Location } from '@angular/common';
 
-// Services
-import { CardsService } from 'app/cards/cards.service';
+import { FormsModule } from "@angular/forms";
 
+// Classes
+import { Player } from "./player";
+
+// Components
 import { BoardComponent } from "app/board/board.component";
+
+// Services
+import { CardsService } from "app/cards/cards.service";
 
 @Component({
     selector: 'app-cards-against-humanity',
@@ -17,12 +23,21 @@ import { BoardComponent } from "app/board/board.component";
     ],
     entryComponents: [
         BoardComponent
+    ],
+    providers: [
+        CardsService
     ]
 })
 
 
 export class CardsAgainstHumanityComponent {
 
-    
+    private player: Player;
+    private languages: string[];
+
+    constructor(private cardsService : CardsService) {
+        this.player = new Player("");
+        this.languages = this.cardsService.getAvailableLanguages();
+    }
 
 }

@@ -87,4 +87,16 @@ export class CardsService {
         return this.dataAnswer
     }
 
+    public getAvailableLanguages(): any[] {
+        return [
+            {
+                text:"Français",
+                value: "fr"
+            }, {
+                text: "English",
+                value:"en"
+            }
+        ]
+    }
+
 }
