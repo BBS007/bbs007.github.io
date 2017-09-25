@@ -8,7 +8,7 @@ exports = module.exports = __webpack_require__(14)();
 
 
 // module
-exports.push([module.i, "/*!\n * Generated with CSS Flag Sprite generator (https://www.flag-sprites.com/)\n */.flag{display:inline-block;width:32px;height:32px;background:url(" + __webpack_require__(494) + ") no-repeat}.flag.flag-us{background-position:-32px 0}.flag.flag-fr{background-position:0 0}", ""]);
+exports.push([module.i, "/*!\n * Generated with CSS Flag Sprite generator (https://www.flag-sprites.com/)\n */.flag{display:inline-block;width:32px;height:32px;background:url(" + __webpack_require__(496) + ") no-repeat}.flag.flag-us{background-position:-32px 0}.flag.flag-fr{background-position:0 0}", ""]);
 
 // exports
 
@@ -37,7 +37,7 @@ webpackEmptyContext.id = 147;
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(9);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(7);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_platform_browser_dynamic__ = __webpack_require__(155);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__app_app_module__ = __webpack_require__(157);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__environments_environment__ = __webpack_require__(159);
@@ -57,7 +57,7 @@ __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_1__angular_platform_browser_dyna
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(9);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(7);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_app_cards_against_humanity_cards_against_humanity_component__ = __webpack_require__(93);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return AppComponent; });
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
@@ -76,7 +76,7 @@ var AppComponent = (function () {
 AppComponent = __decorate([
     __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Y" /* Component */])({
         selector: 'app-root',
-        template: __webpack_require__(222),
+        template: __webpack_require__(223),
         styles: [__webpack_require__(215)],
         entryComponents: [__WEBPACK_IMPORTED_MODULE_1_app_cards_against_humanity_cards_against_humanity_component__["a" /* CardsAgainstHumanityComponent */]]
     })
@@ -91,7 +91,7 @@ AppComponent = __decorate([
 
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_platform_browser__ = __webpack_require__(28);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_core__ = __webpack_require__(9);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_core__ = __webpack_require__(7);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_forms__ = __webpack_require__(154);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__angular_http__ = __webpack_require__(90);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__angular_router__ = __webpack_require__(91);
@@ -102,6 +102,7 @@ AppComponent = __decorate([
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_9_app_cards_answer_card_answer_card_component__ = __webpack_require__(58);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_10_app_cards_holder_card_holder_card_component__ = __webpack_require__(95);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_11_app_board_board_component__ = __webpack_require__(92);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_12__not_found_not_found_component__ = __webpack_require__(158);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return AppModule; });
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -123,6 +124,16 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 
 
 
+
+var appRoutes = [
+    // Root
+    { path: "", redirectTo: "/cah", pathMatch: "full" },
+    // Pages
+    { path: "cah", component: __WEBPACK_IMPORTED_MODULE_7_app_cards_against_humanity_cards_against_humanity_component__["a" /* CardsAgainstHumanityComponent */] },
+    { path: "board", component: __WEBPACK_IMPORTED_MODULE_11_app_board_board_component__["a" /* BoardComponent */] },
+    // Not found
+    { path: "**", component: __WEBPACK_IMPORTED_MODULE_12__not_found_not_found_component__["a" /* NotFoundComponent */] }
+];
 var AppModule = (function () {
     function AppModule() {
     }
@@ -134,12 +145,7 @@ AppModule = __decorate([
             __WEBPACK_IMPORTED_MODULE_0__angular_platform_browser__["a" /* BrowserModule */],
             __WEBPACK_IMPORTED_MODULE_2__angular_forms__["a" /* FormsModule */],
             __WEBPACK_IMPORTED_MODULE_3__angular_http__["a" /* HttpModule */],
-            __WEBPACK_IMPORTED_MODULE_4__angular_router__["a" /* RouterModule */].forRoot([
-                {
-                    path: 'cah',
-                    component: __WEBPACK_IMPORTED_MODULE_7_app_cards_against_humanity_cards_against_humanity_component__["a" /* CardsAgainstHumanityComponent */]
-                }
-            ])
+            __WEBPACK_IMPORTED_MODULE_4__angular_router__["a" /* RouterModule */].forRoot(appRoutes)
         ],
         declarations: [
             __WEBPACK_IMPORTED_MODULE_6_app_app_component__["a" /* AppComponent */],
@@ -147,7 +153,8 @@ AppModule = __decorate([
             __WEBPACK_IMPORTED_MODULE_8_app_cards_question_card_question_card_component__["a" /* QuestionCardComponent */],
             __WEBPACK_IMPORTED_MODULE_9_app_cards_answer_card_answer_card_component__["a" /* AnswerCardComponent */],
             __WEBPACK_IMPORTED_MODULE_10_app_cards_holder_card_holder_card_component__["a" /* HolderCardComponent */],
-            __WEBPACK_IMPORTED_MODULE_11_app_board_board_component__["a" /* BoardComponent */]
+            __WEBPACK_IMPORTED_MODULE_11_app_board_board_component__["a" /* BoardComponent */],
+            __WEBPACK_IMPORTED_MODULE_12__not_found_not_found_component__["a" /* NotFoundComponent */]
         ],
         providers: [
             __WEBPACK_IMPORTED_MODULE_5_app_cards_cards_service__["a" /* CardsService */]
@@ -164,25 +171,33 @@ AppModule = __decorate([
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return Player; });
-var Player = (function () {
-    function Player(name) {
-        this._name = name;
-    }
-    Object.defineProperty(Player.prototype, "name", {
-        get: function () {
-            return this._name;
-        },
-        set: function (name) {
-            this._name = name;
-        },
-        enumerable: true,
-        configurable: true
-    });
-    return Player;
-}());
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(7);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return NotFoundComponent; });
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
 
-//# sourceMappingURL=player.js.map
+var NotFoundComponent = (function () {
+    function NotFoundComponent() {
+    }
+    return NotFoundComponent;
+}());
+NotFoundComponent = __decorate([
+    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Y" /* Component */])({
+        selector: 'app-not-found',
+        template: __webpack_require__(229),
+        styles: [__webpack_require__(220)]
+    }),
+    __metadata("design:paramtypes", [])
+], NotFoundComponent);
+
+//# sourceMappingURL=not-found.component.js.map
 
 /***/ }),
 
@@ -293,45 +308,70 @@ module.exports = module.exports.toString();
 
 /***/ }),
 
-/***/ 222:
-/***/ (function(module, exports) {
+/***/ 220:
+/***/ (function(module, exports, __webpack_require__) {
 
-module.exports = "<app-cards-against-humanity>\r\n    \r\n</app-cards-against-humanity>\r\n"
+exports = module.exports = __webpack_require__(14)();
+// imports
+
+
+// module
+exports.push([module.i, "", ""]);
+
+// exports
+
+
+/*** EXPORTS FROM exports-loader ***/
+module.exports = module.exports.toString();
 
 /***/ }),
 
 /***/ 223:
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"board-back\">\n\n  <div class=\"board\">\n\n\n    <div class=\"pull-right\">\n      <div class=\"btn-group btn-block\">\n        <button (click)=\"switchLang('fr')\" class=\"btn btn-default\" [class.active]=\"lang == 'fr'\">\n                        <img src=\"/assets/blank.gif\" alt=\"French\" class=\"flag flag-fr\"/>\n                    </button>\n        <button (click)=\"switchLang('en')\" class=\"btn btn-default\" [class.active]=\"lang == 'en'\">\n                        <img src=\"/assets/blank.gif\" alt=\"English\" class=\"flag flag-us\"/>\n                    </button>\n      </div>\n\n      <button (click)=\"newGame()\" class=\"btn btn-block btn-success\">New Game</button>\n      <button (click)=\"newDeal()\" class=\"btn btn-block btn-success\">New Deal</button>\n    </div>\n\n\n    <div class=\"container-fluid\">\n      <div class=\"row\">\n        <div *ngIf=\"currentQuestion\">\n          <app-question-card [card]=\"currentQuestion\" class=\"col-sm-3\">\n          </app-question-card>\n        </div>\n      </div>\n      <!-- </div>\n    \n            <div class=\"container-fluid\"> -->\n      <div class=\"row row-margin\">\n        <div *ngIf=\"currentQuestion\">\n          <div *ngFor=\"let i of getBlanksAnswersArray()\">\n            <app-holder-card [answer]=\"choosenAnswers[i]\" (click)=\"onAnswerDismiss(i)\" class=\"col-sm-3\">\n            </app-holder-card>\n          </div>\n        </div>\n      </div>\n    </div>\n\n\n    <div *ngIf=\"currentQuestion\">\n      {{getPreview()}}\n    </div>\n\n    <div *ngIf=\"currentAnswers\" class=\"answers\">\n\n      <ng-container *ngFor=\"let a of currentAnswers\">\n\n        <app-answer-card [card]=\"a\" (click)=\"onAnswerClick(a)\" class=\"answer card-hand\">\n        </app-answer-card>\n\n      </ng-container>\n\n    </div>\n  </div>\n\n</div>"
+module.exports = "<!-- The main router outlet -->\r\n<router-outlet></router-outlet>"
 
 /***/ }),
 
 /***/ 224:
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"jumbotron\">\r\n    <h1 class=\"display\">\r\n        Cards\r\n    </h1>\r\n    <p class=\"lead\">A card game</p>\r\n\r\n    <hr>\r\n\r\n    <div>\r\n        <label> Username: </label>\r\n        <input [(ngModel)]=\"player.name\" placeholder=\"username\">\r\n    </div>\r\n\r\n    <div>\r\n        <label>Language: </label>\r\n        <div *ngIf=\"languages\" >\r\n        <select>\r\n            <option *ngFor=\"let lang of languages\">{{lang.text}}</option>\r\n        </select>\r\n        </div>\r\n    </div>\r\n\r\n\r\n</div>"
+module.exports = "<div class=\"board-back\">\n\n  <div class=\"board\">\n\n\n    <div class=\"pull-right\">\n      <div class=\"btn-group btn-block\">\n        <button (click)=\"switchLang('fr')\" class=\"btn btn-default\" [class.active]=\"lang == 'fr'\">\n                        <img src=\"/assets/blank.gif\" alt=\"French\" class=\"flag flag-fr\"/>\n                    </button>\n        <button (click)=\"switchLang('en')\" class=\"btn btn-default\" [class.active]=\"lang == 'en'\">\n                        <img src=\"/assets/blank.gif\" alt=\"English\" class=\"flag flag-us\"/>\n                    </button>\n      </div>\n\n      <button (click)=\"newGame()\" class=\"btn btn-block btn-success\">New Game</button>\n      <button (click)=\"newDeal()\" class=\"btn btn-block btn-success\">New Deal</button>\n    </div>\n\n\n    <div class=\"container-fluid\">\n      <div class=\"row\">\n        <div *ngIf=\"currentQuestion\">\n          <app-question-card [card]=\"currentQuestion\" class=\"col-sm-3\">\n          </app-question-card>\n        </div>\n      </div>\n      <!-- </div>\n    \n            <div class=\"container-fluid\"> -->\n      <div class=\"row row-margin\">\n        <div *ngIf=\"currentQuestion\">\n          <div *ngFor=\"let i of getBlanksAnswersArray()\">\n            <app-holder-card [answer]=\"choosenAnswers[i]\" (click)=\"onAnswerDismiss(i)\" class=\"col-sm-3\">\n            </app-holder-card>\n          </div>\n        </div>\n      </div>\n    </div>\n\n\n    <div *ngIf=\"currentQuestion\">\n      {{getPreview()}}\n    </div>\n\n    <div *ngIf=\"currentAnswers\" class=\"answers\">\n\n      <ng-container *ngFor=\"let a of currentAnswers\">\n\n        <app-answer-card [card]=\"a\" (click)=\"onAnswerClick(a)\" class=\"answer card-hand\">\n        </app-answer-card>\n\n      </ng-container>\n\n    </div>\n  </div>\n\n</div>"
 
 /***/ }),
 
 /***/ 225:
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"card card-answer\">\n  <div class=\"card-text\">\n    {{card.text}}\n  </div>\n</div>"
+module.exports = "<div class=\"jumbotron\">\r\n    <h1>\r\n        Cards\r\n    </h1>\r\n    <p>A card game</p>\r\n\r\n    <hr>\r\n\r\n    <form (ngSubmit)=\"onSubmit()\">\r\n        <div class=\"form-group\">\r\n            <label for=\"username\"> Username: </label>\r\n            <input class=\"form-control success\" name=\"username\" required [(ngModel)]=\"username\" placeholder=\"username\" type=\"text\">\r\n        </div>\r\n\r\n        <div class=\"form-group\">\r\n            <label>Language: </label>\r\n            <div *ngIf=\"languages\">\r\n                <select class=\"form-control\" #t (change)=\"langChanged(t.value)\">\r\n                    <option *ngFor=\"let lang of languages\" [value]=\"lang.value\">\r\n                        {{lang.text}}\r\n                    </option>\r\n                </select>\r\n\r\n            </div>\r\n        </div>\r\n\r\n        <button type=\"submit\" class=\"btn btn-success\">Let's Go!</button>\r\n    </form>\r\n\r\n\r\n\r\n    <!-- <input [(ngModel)]=\"person.firstName\" name=\"first\"> -->\r\n\r\n</div>"
 
 /***/ }),
 
 /***/ 226:
 /***/ (function(module, exports) {
 
-module.exports = "<div *ngIf=\"!answer\" class=\"card card-holder\">\n\n    <div class=\"card-text\">\n\n    </div>\n\n</div>\n<div *ngIf=\"answer\">\n    <app-answer-card [card]=\"answer\"></app-answer-card>\n</div>"
+module.exports = "<div class=\"card card-answer\">\n  <div class=\"card-text\">\n    {{card.text}}\n  </div>\n</div>"
 
 /***/ }),
 
 /***/ 227:
 /***/ (function(module, exports) {
 
+module.exports = "<div *ngIf=\"!answer\" class=\"card card-holder\">\n\n    <div class=\"card-text\">\n\n    </div>\n\n</div>\n<div *ngIf=\"answer\">\n    <app-answer-card [card]=\"answer\"></app-answer-card>\n</div>"
+
+/***/ }),
+
+/***/ 228:
+/***/ (function(module, exports) {
+
 module.exports = "<div class=\"card card-question\">\n  <div class=\"card-text\">\n    {{card.text}}\n\n    <div class=\"card-pick\">\n      {{card.pick}}\n    </div>\n  </div>\n\n</div>"
+
+/***/ }),
+
+/***/ 229:
+/***/ (function(module, exports) {
+
+module.exports = "<p>\r\n  Page not found.\r\n</p>\r\n"
 
 /***/ }),
 
@@ -367,14 +407,14 @@ var AnswerCard = (function (_super) {
 
 /***/ }),
 
-/***/ 494:
+/***/ 496:
 /***/ (function(module, exports) {
 
 module.exports = "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEAAAAAgCAYAAACinX6EAAAEtklEQVR4nO2ZX4gVVRzHP2fmXnc1795NEpcSgh7KkupZSSTxwUDBRbCHRcFdE3pIXVE3X8QyXXTFJEpwV2LTIAs2UFnxoYiwp6A/UJH4kEpokLJ/7r+5c+fMOT3M3L2z6/XO3Ntw74N+X37nzD3nfH/zne/5M3OF1ppHGUarE2g1HgvQ6gRaDQGYQJsfmwkXsP1yy/gTQMfatScnTDPcDFev7oo08s0NW8IbGYLnLp1fBBCVvxo+m/dzQ/0wDLouji5KAGnDMFiz5sXGBqqCha+vDG1T/OMGQNrLxWB09C3OnfuBrVtfqysu2R/toVSFGE0ngDYpFbbtMDVVQOPNiyA0IOrYLZ1/7/sd/U5CIPyyBhKdHeiSDZ71kVIxMvId27at5vjQOHv632BoaJz+YDw+Tv+eSv340DgCmHj3g9mJMucGgjfk/250duD8eQOgLQGglMKyShSLTvS7rAFdtB+8Fiiroo2SslJXit7e1Rw9eomBgQ0MDkaLx45dBvdBrlAUi+B4/AkAx1FYloNlxSSAVaz9ezIJpYoAjqM4ceIK+/at59Chrzl4sDtSBFj0yeHGE71wxhNASpdcziafLzU+WABuvlC7gWmgAw6Q0mX37nXs3/8lg4ObGRiIFg8c+Ip7W96pOz8jtRB55x+AsgCKbNYin/fsVG0dqAcqTAAh0HZFbCkVAwMXOHJkMzt3nuPUqS2RIoBy8vUnKECXPP4ZB2QyxdgcoEME0FrPEcDl8OE36esbYXh4O319ZyPFHTvOsuT7TxtPVHxRXgNcslm7yhpQ9kJ9nnBzZQGq99euQpUqAjiOS2/vMMMj2+npOc3n59+mp+c050MiaO6u3ADCH1vrSjlYn3NdtLeD7a1TM4tgJlPEtssClJMul+uDKjzEAX4i2pVQqojtOIozZ/ro3vghY2O72Nh9irGxnXR3e/Xumfrs65s2fYRuL0RPsfwcpIMO7gJSSrJZhePIGr2jQ+Vrz0tRKoFZOflKKVm//iQXL+5m3bohrlzZGykCPHP928YTFaLigFyugOO4jQ8WgDsxVZs3mcRMp2bqjqO4fLmfFSve49q1g5HjqlXvc/upl+pPMJnE7PD4BfBCV9fe67lcCSlrC2BZH0ca//cnn/dL1Y+PIpFApJ5g+c2flgFE5a+G6/O/qbsPPv+zf/24zHeARGuNUvF8HdJKhTTQ6IDb7tw5hmE0981cKQWm6U0BV7poTWwCEEEA5VR2gVtPv0pCuuhSPCfRMIh5SWQyAZR3ASkBk9i+Dyo1eyOZC61RbsUByvUcqFWdU2AuR/Clpya/iXJn7QIa04zPAVrrh5MDQghkYMdZ+vcvtLe3x8IdFZZlwYIF/hRwJaaZiM8BEcYJOuDW4uXMb2tDF6x4+EMgFsyn4L2Oe98ElVII8X9O//VmILxFyIer1OwTXFP4vYeUAM+yzeSfK8DSu7+STqebmABMT09DZ2dQAEEqFc88NFILQ9uowDS53fUKnR2pGq3jx2QmC3gOcEGTzU6Hd5qcjDT4VCYT2sa/fRfASbnc11ORxo4LOgUUcQWwBHgZWNzUDOAe8Jtfbhm/wPswmfJjM2EDWb/cMn7x+M/RRxyPvAD/ASV+uFB9PhhdAAAAAElFTkSuQmCC"
 
 /***/ }),
 
-/***/ 497:
+/***/ 499:
 /***/ (function(module, exports, __webpack_require__) {
 
 module.exports = __webpack_require__(148);
@@ -386,7 +426,7 @@ module.exports = __webpack_require__(148);
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(9);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(7);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__answer_card__ = __webpack_require__(42);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return AnswerCardComponent; });
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
@@ -414,7 +454,7 @@ __decorate([
 AnswerCardComponent = __decorate([
     __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Y" /* Component */])({
         selector: 'app-answer-card',
-        template: __webpack_require__(225),
+        template: __webpack_require__(226),
         styles: [__webpack_require__(77), __webpack_require__(218)]
     }),
     __metadata("design:paramtypes", [])
@@ -429,9 +469,9 @@ var _a;
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(9);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(7);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_http__ = __webpack_require__(90);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_rxjs_Rx__ = __webpack_require__(229);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_rxjs_Rx__ = __webpack_require__(231);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_rxjs_Rx___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2_rxjs_Rx__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__question_card_question_card__ = __webpack_require__(60);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__answer_card_answer_card__ = __webpack_require__(42);
@@ -644,7 +684,7 @@ module.exports = module.exports.toString();
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(9);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(7);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_router__ = __webpack_require__(91);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_common__ = __webpack_require__(41);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_app_cards_cards_service__ = __webpack_require__(59);
@@ -835,7 +875,7 @@ var BoardComponent = (function () {
 BoardComponent = __decorate([
     __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Y" /* Component */])({
         selector: 'app-board',
-        template: __webpack_require__(223),
+        template: __webpack_require__(224),
         styles: [__webpack_require__(216), __webpack_require__(78), __webpack_require__(108)],
         providers: [
             __WEBPACK_IMPORTED_MODULE_3_app_cards_cards_service__["a" /* CardsService */]
@@ -846,7 +886,7 @@ BoardComponent = __decorate([
             __WEBPACK_IMPORTED_MODULE_8_app_cards_holder_card_holder_card_component__["a" /* HolderCardComponent */]
         ]
     }),
-    __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_3_app_cards_cards_service__["a" /* CardsService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_3_app_cards_cards_service__["a" /* CardsService */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_1__angular_router__["b" /* ActivatedRoute */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__angular_router__["b" /* ActivatedRoute */]) === "function" && _b || Object, typeof (_c = typeof __WEBPACK_IMPORTED_MODULE_2__angular_common__["d" /* Location */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2__angular_common__["d" /* Location */]) === "function" && _c || Object])
+    __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_3_app_cards_cards_service__["a" /* CardsService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_3_app_cards_cards_service__["a" /* CardsService */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_1__angular_router__["b" /* ActivatedRoute */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__angular_router__["b" /* ActivatedRoute */]) === "function" && _b || Object, typeof (_c = typeof __WEBPACK_IMPORTED_MODULE_2__angular_common__["e" /* Location */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2__angular_common__["e" /* Location */]) === "function" && _c || Object])
 ], BoardComponent);
 
 var _a, _b, _c;
@@ -858,10 +898,9 @@ var _a, _b, _c;
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(9);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__player__ = __webpack_require__(158);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_app_board_board_component__ = __webpack_require__(92);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_app_cards_cards_service__ = __webpack_require__(59);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(7);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_app_board_board_component__ = __webpack_require__(92);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_app_cards_cards_service__ = __webpack_require__(59);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return CardsAgainstHumanityComponent; });
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -873,8 +912,6 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 
-// Classes
-
 // Components
 
 // Services
@@ -882,24 +919,35 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 var CardsAgainstHumanityComponent = (function () {
     function CardsAgainstHumanityComponent(cardsService) {
         this.cardsService = cardsService;
-        this.player = new __WEBPACK_IMPORTED_MODULE_1__player__["a" /* Player */]("");
+        this.username = "";
+        // TODO: create a Lang class to format it properly
         this.languages = this.cardsService.getAvailableLanguages();
+        this.language = this.languages[0].value;
     }
+    CardsAgainstHumanityComponent.prototype.onSubmit = function () {
+        if ("" != this.username) {
+            console.log("Submited\n" + this.username + "\n" + this.language);
+        }
+    };
+    CardsAgainstHumanityComponent.prototype.langChanged = function (value) {
+        console.log("langChanged " + value);
+        this.language = value;
+    };
     return CardsAgainstHumanityComponent;
 }());
 CardsAgainstHumanityComponent = __decorate([
     __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Y" /* Component */])({
         selector: 'app-cards-against-humanity',
-        template: __webpack_require__(224),
+        template: __webpack_require__(225),
         styles: [__webpack_require__(217), __webpack_require__(78), __webpack_require__(108)],
         entryComponents: [
-            __WEBPACK_IMPORTED_MODULE_2_app_board_board_component__["a" /* BoardComponent */]
+            __WEBPACK_IMPORTED_MODULE_1_app_board_board_component__["a" /* BoardComponent */]
         ],
         providers: [
-            __WEBPACK_IMPORTED_MODULE_3_app_cards_cards_service__["a" /* CardsService */]
+            __WEBPACK_IMPORTED_MODULE_2_app_cards_cards_service__["a" /* CardsService */]
         ]
     }),
-    __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_3_app_cards_cards_service__["a" /* CardsService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_3_app_cards_cards_service__["a" /* CardsService */]) === "function" && _a || Object])
+    __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_2_app_cards_cards_service__["a" /* CardsService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2_app_cards_cards_service__["a" /* CardsService */]) === "function" && _a || Object])
 ], CardsAgainstHumanityComponent);
 
 var _a;
@@ -933,7 +981,7 @@ var Card = (function () {
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(9);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(7);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__answer_card_answer_card__ = __webpack_require__(42);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__answer_card_answer_card_component__ = __webpack_require__(58);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return HolderCardComponent; });
@@ -961,7 +1009,7 @@ __decorate([
 HolderCardComponent = __decorate([
     __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Y" /* Component */])({
         selector: 'app-holder-card',
-        template: __webpack_require__(226),
+        template: __webpack_require__(227),
         styles: [__webpack_require__(77), __webpack_require__(219)],
         entryComponents: [
             __WEBPACK_IMPORTED_MODULE_2__answer_card_answer_card_component__["a" /* AnswerCardComponent */]
@@ -979,7 +1027,7 @@ var _a;
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(9);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(7);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__question_card__ = __webpack_require__(60);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return QuestionCardComponent; });
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
@@ -1007,7 +1055,7 @@ __decorate([
 QuestionCardComponent = __decorate([
     __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Y" /* Component */])({
         selector: 'app-question-card',
-        template: __webpack_require__(227),
+        template: __webpack_require__(228),
         styles: [__webpack_require__(77), __webpack_require__(78)]
     }),
     __metadata("design:paramtypes", [])
@@ -1018,5 +1066,5 @@ var _a;
 
 /***/ })
 
-},[497]);
+},[499]);
 //# sourceMappingURL=main.bundle.js.map
