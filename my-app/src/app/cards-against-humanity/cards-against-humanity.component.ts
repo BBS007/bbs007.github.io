@@ -1,7 +1,4 @@
-import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute, Params } from '@angular/router';
-import { Location } from '@angular/common';
-
+import { Component } from '@angular/core';
 import { FormsModule } from "@angular/forms";
 
 // Classes
@@ -32,11 +29,11 @@ import { CardsService } from "app/cards/cards.service";
 
 export class CardsAgainstHumanityComponent {
 
-    private player: Player;
+
+    private username: string;
     private languages: string[];
 
     constructor(private cardsService : CardsService) {
-        this.player = new Player("");
         this.languages = this.cardsService.getAvailableLanguages();
     }
 

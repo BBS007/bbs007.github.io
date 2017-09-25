@@ -2,7 +2,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
-import { RouterModule } from '@angular/router'
+import { RouterModule, Routes } from '@angular/router'
 
 // Services
 import { CardsService } from 'app/cards/cards.service';
@@ -14,18 +14,26 @@ import { QuestionCardComponent } from 'app/cards/question-card/question-card.com
 import { AnswerCardComponent } from 'app/cards/answer-card/answer-card.component';
 import { HolderCardComponent } from 'app/cards/holder-card/holder-card.component';
 import { BoardComponent } from 'app/board/board.component';
+import { NotFoundComponent } from './not-found/not-found.component';
+
+const appRoutes: Routes = [
+    // Root
+    { path: "", redirectTo: "/cah", pathMatch: "full" },
+
+    // Pages
+    { path: "cah", component: CardsAgainstHumanityComponent },
+    { path: "board", component: BoardComponent },
+
+    // Not found
+    { path: "**", component: NotFoundComponent }
+]
 
 @NgModule({
     imports: [
         BrowserModule,
         FormsModule,
         HttpModule,
-        RouterModule.forRoot([
-            {
-                path: 'cah',
-                component: CardsAgainstHumanityComponent
-            }
-        ])
+        RouterModule.forRoot(appRoutes)
     ],
     declarations: [
         AppComponent,
@@ -33,12 +41,13 @@ import { BoardComponent } from 'app/board/board.component';
         QuestionCardComponent,
         AnswerCardComponent,
         HolderCardComponent,
-        BoardComponent
+        BoardComponent,
+        NotFoundComponent
     ],
     providers: [
         CardsService
     ],
     bootstrap: [AppComponent]
 })
-    
+
 export class AppModule { }

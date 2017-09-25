@@ -1,24 +1,25 @@
 <div class="jumbotron">
-    <h1 class="display">
+    <h1>
         Cards
     </h1>
-    <p class="lead">A card game</p>
-
+    <p>A card game</p>
+    
     <hr>
-
+    
     <div>
         <label> Username: </label>
-        <input [(ngModel)]="player.name" placeholder="username">
+        <input [(ngModel)]="username" placeholder="username">
     </div>
-
+    
     <div>
         <label>Language: </label>
         <div *ngIf="languages" >
-        <select>
-            <option *ngFor="let lang of languages">{{lang.text}}</option>
-        </select>
+            <select>
+                <option *ngFor="let lang of languages">{{lang.text}}</option>
+            </select>
         </div>
     </div>
-
-
+    
+    <button type="submit">Submit</button>
+        
 </div>
