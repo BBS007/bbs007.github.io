@@ -1,19 +1,25 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input } from '@angular/core';
+
+
+import { AnswerCard } from '../answer-card/answer-card'
+import { AnswerCardComponent } from '../answer-card/answer-card.component'
 
 @Component({
   selector: 'app-holder-card',
   templateUrl: './holder-card.component.html',
   styleUrls: [
-    './holder-card.component.css',
-    '../question-card/question-card.component.css'
+    '../card.css',
+    './holder-card.component.css'
+  ],
+  entryComponents: [
+    AnswerCardComponent
   ]
 })
-  
-export class HolderCardComponent implements OnInit {
+
+export class HolderCardComponent {
+
+  @Input() answer: AnswerCard;
 
   constructor() { }
-
-  ngOnInit() {
-  }
 
 }

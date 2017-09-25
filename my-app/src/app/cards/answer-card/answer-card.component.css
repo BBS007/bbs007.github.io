@@ -1,0 +1,15 @@
+/* Answer card */
+.card-answer {
+    background-color: black;
+
+    box-shadow: 1em 1em 4em black;
+}
+
+.card-answer .card-text {
+    background-color: white;
+    color: black;
+}
+
+.card-answer:hover {
+    box-shadow: 0 0 4em white;
+}

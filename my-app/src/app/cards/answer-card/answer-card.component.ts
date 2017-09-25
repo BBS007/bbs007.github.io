@@ -6,8 +6,8 @@ import { AnswerCard } from './answer-card';
   selector: 'app-answer-card',
   templateUrl: './answer-card.component.html',
   styleUrls: [
-    './answer-card.component.css',
-    '../question-card/question-card.component.css'
+    '../card.css',
+    './answer-card.component.css'
   ]
 })
   
