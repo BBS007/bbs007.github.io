@@ -3,23 +3,32 @@
         Cards
     </h1>
     <p>A card game</p>
-    
+
     <hr>
-    
-    <div>
-        <label> Username: </label>
-        <input [(ngModel)]="username" placeholder="username">
-    </div>
-    
-    <div>
-        <label>Language: </label>
-        <div *ngIf="languages" >
-            <select>
-                <option *ngFor="let lang of languages">{{lang.text}}</option>
-            </select>
+
+    <form (ngSubmit)="onSubmit()">
+        <div class="form-group">
+            <label for="username"> Username: </label>
+            <input class="form-control success" name="username" required [(ngModel)]="username" placeholder="username" type="text">
         </div>
-    </div>
-    
-    <button type="submit">Submit</button>
-        
+
+        <div class="form-group">
+            <label>Language: </label>
+            <div *ngIf="languages">
+                <select class="form-control" #t (change)="langChanged(t.value)">
+                    <option *ngFor="let lang of languages" [value]="lang.value">
+                        {{lang.text}}
+                    </option>
+                </select>
+
+            </div>
+        </div>
+
+        <button type="submit" class="btn btn-success">Let's Go!</button>
+    </form>
+
+
+
+    <!-- <input [(ngModel)]="person.firstName" name="first"> -->
+
 </div>

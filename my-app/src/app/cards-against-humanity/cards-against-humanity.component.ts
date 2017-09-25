@@ -31,10 +31,29 @@ export class CardsAgainstHumanityComponent {
 
 
     private username: string;
-    private languages: string[];
+    private languages: any[];
 
-    constructor(private cardsService : CardsService) {
+    private language: string;
+
+    constructor(private cardsService: CardsService) {
+        this.username = "";
+
+        // TODO: create a Lang class to format it properly
         this.languages = this.cardsService.getAvailableLanguages();
+        this.language = this.languages[0].value;
     }
+
+
+    private onSubmit() {
+        if ("" != this.username) {
+            console.log("Submited\n" + this.username + "\n" + this.language);
+      }
+    
+  }
+  
+  private langChanged(value: string) {
+      console.log("langChanged " + value);
+      this.language = value;
+  }
 
 }
