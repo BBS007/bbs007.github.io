@@ -329,7 +329,7 @@ module.exports = module.exports.toString();
 /***/ 223:
 /***/ (function(module, exports) {
 
-module.exports = "<!-- The main router outlet -->\r\n<router-outlet></router-outlet>"
+module.exports = "<!-- The main router outlet -->\r\n<a [routerLink]=\"['/board']\">Board</a>\r\n<router-outlet></router-outlet>"
 
 /***/ }),
 
