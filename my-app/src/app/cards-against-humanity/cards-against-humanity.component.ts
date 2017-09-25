@@ -198,7 +198,6 @@ export class CardsAgainstHumanityComponent implements OnInit {
             }
         })) {
 
-
             var index: number = 0;
 
             // Search the greatest index we can push answer
@@ -211,13 +210,21 @@ export class CardsAgainstHumanityComponent implements OnInit {
                 index = 0;
             }
 
-            // Shift all existing cards
-            for (var i = 0; i < this.choosenAnswers.length - 1; ++i) {
-                this.choosenAnswers[i + 1] = this.choosenAnswers[i];
-            }
+            // Shift all existing cards until there is another blank
+            var i = 0;
+            while (index + i < this.choosenAnswers.length - 1 &&
+                this.choosenAnswers[index + i] != null) {
+                
+                this.choosenAnswers[index + i + 1] = this.choosenAnswers[i];
+                ++i;
 
+            }
+            
             // Update the view
             this.choosenAnswers[index] = answer;
+
+            console.log(this.currentQuestion.getPreview(this.choosenAnswers));
+
         }
     }
 
@@ -227,6 +234,11 @@ export class CardsAgainstHumanityComponent implements OnInit {
      */
     private onAnswerDismiss(index: number): void {
         this.choosenAnswers[index] = null;
+        console.log(this.currentQuestion.getPreview(this.choosenAnswers));
+    }
+
+    private getPreview(): string {
+        return this.currentQuestion.getPreview(this.choosenAnswers);
     }
 
 }

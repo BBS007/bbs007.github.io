@@ -5,7 +5,7 @@
 export abstract class Card {
 
     // The text to display on the card
-    private text : string;
+    protected text : string;
 
     constructor(text: string) {
         this.text = text;
