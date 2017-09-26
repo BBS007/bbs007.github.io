@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import { ActivatedRoute, Params } from '@angular/router';
 import { Location } from '@angular/common';
 
@@ -15,233 +15,214 @@ import { AnswerCardComponent } from 'app/cards/answer-card/answer-card.component
 import { HolderCardComponent } from 'app/cards/holder-card/holder-card.component'
 
 @Component({
-  selector: 'app-board',
-  templateUrl: './board.component.html',
-  styleUrls: [
-    './board.component.css',
-    '../cards/question-card/question-card.component.css',
-    '../flags/flags.min.css'
-  ],
-  providers: [
-    CardsService
-  ],
-  entryComponents: [
-    QuestionCardComponent,
-    AnswerCardComponent,
-    HolderCardComponent
-  ]
+    selector: 'app-board',
+    templateUrl: './board.component.html',
+    styleUrls: [
+        './board.component.css',
+        '../cards/question-card/question-card.component.css',
+        '../flags/flags.min.css'
+    ],
+    providers: [
+        CardsService
+    ],
+    entryComponents: [
+        QuestionCardComponent,
+        AnswerCardComponent,
+        HolderCardComponent
+    ]
 })
-  
+
 export class BoardComponent {
 
-  // The complete lists
-  private questions: QuestionCard[];
-  private answers: AnswerCard[];
+    // The complete lists
+    private questions: QuestionCard[];
+    private answers: AnswerCard[];
 
-  // Current list displayed
-  private currentQuestion: QuestionCard;
-  private currentAnswers: AnswerCard[];
+    // Current list displayed
+    private currentQuestion: QuestionCard;
+    private currentAnswers: AnswerCard[];
 
-  private choosenAnswers: AnswerCard[];
+    private choosenAnswers: AnswerCard[];
 
-  // The lang support
-  private lang: string;
+    // The lang support
+    @Input() lang: string = "fr"; // TODO: from default class
 
-  constructor(
-      private cardsService: CardsService,
-      private route: ActivatedRoute,
-      private location: Location
-  ) {
-      // Init lists to null so nothing is displayed
-      this.currentQuestion = null;
-      this.currentAnswers = null;
-      this.choosenAnswers = [];
+    constructor(
+        private cardsService: CardsService,
+        private route: ActivatedRoute,
+        private location: Location
+    ) {
+        // Init lists to null so nothing is displayed
+        this.currentQuestion = null;
+        this.currentAnswers = null;
+        this.choosenAnswers = [];
 
-      // Default lang is fr
-      this.lang = "fr";
+        // Start a new game
+        this.newGame();
 
-      // Start a new game
-      this.newGame();
+        console.log("New board created with lang " + this.lang);
+    }
 
-  }
+    /**
+     * Will fetch the lists in a promise.
+     * @return a promise that is resolved when lists are reset.
+     */
+    private initCardsLists(): Promise<Boolean[]> {
 
-  ngOnInit(): void {
+        // Questions promise, resolved when the result is set
+        const promiseQuestions = new Promise<Boolean>((resolve) => {
 
-  }
+            this.cardsService.getQuestionCards(this.lang).subscribe(res => {
+                this.questions = res;
+                console.log("Questions set");
+                resolve(true);
+            });
 
-  /**
-   * Will fetch the lists in a promise.
-   * @return a promise that is resolved when lists are reset.
-   */
-  private initCardsLists(): Promise<Boolean[]> {
+        });
 
-      // Questions promise, resolved when the result is set
-      const promiseQuestions = new Promise<Boolean>((resolve) => {
+        // Answers promise, resolved when the result is set
+        const promiseAnswers = new Promise<Boolean>((resolve) => {
 
-          this.cardsService.getQuestionCards(this.lang).subscribe(res => {
-              this.questions = res;
-              console.log("Questions set");
-              resolve(true);
-          });
+            this.cardsService.getAnswserCards(this.lang).subscribe(res => {
+                this.answers = res;
+                console.log("Answers set");
+                resolve(true);
+            });
 
-      });
+        });
 
-      // Answers promise, resolved when the result is set
-      const promiseAnswers = new Promise<Boolean>((resolve) => {
+        // This promise is resolved after both are resolved
+        return Promise.all([
+            promiseQuestions,
+            promiseAnswers
+        ]);
 
-          this.cardsService.getAnswserCards(this.lang).subscribe(res => {
-              this.answers = res;
-              console.log("Answers set");
-              resolve(true);
-          });
+    }
 
-      });
+    private randomQuestion(): QuestionCard {
+        var ret = new QuestionCard("No more questions", 0);
 
-      // This promise is resolved after both are resolved
-      return Promise.all([
-          promiseQuestions,
-          promiseAnswers
-      ]);
+        if (0 != this.questions.length) {
 
-  }
+            // Random number to pick in tab
+            let randNumber = Math.random() * this.questions.length;
 
-  private randomQuestion(): QuestionCard {
-      var ret = new QuestionCard("No more questions", 0);
+            // Get the random question and delete it from the list
+            ret = this.questions.splice(randNumber, 1)[0];
+        }
 
-      if (0 != this.questions.length) {
+        return ret;
+    }
 
-          // Random number to pick in tab
-          let randNumber = Math.random() * this.questions.length;
+    private randomAnswers(howMany: number = 5): AnswerCard[] {
+        var ret: AnswerCard[] = new Array<AnswerCard>(howMany);
 
-          // Get the random question and delete it from the list
-          ret = this.questions.splice(randNumber, 1)[0];
-      }
+        if (howMany < this.answers.length) {
+            for (var i = 0; i < howMany; ++i) {
 
-      return ret;
-  }
+                // Random number to pick in tab
+                let randNumber = Math.random() * this.answers.length;
 
-  private randomAnswers(howMany: number = 5): AnswerCard[] {
-      var ret: AnswerCard[] = new Array<AnswerCard>(howMany);
+                ret[i] = this.answers.splice(randNumber, 1)[0];
+            }
 
-      if (howMany < this.answers.length) {
-          for (var i = 0; i < howMany; ++i) {
+        } else {
+            for (var i = 0; i < howMany; ++i) {
+                ret[i] = new AnswerCard("No more answers");
+            }
+        }
 
-              // Random number to pick in tab
-              let randNumber = Math.random() * this.answers.length;
+        return ret;
+    }
 
-              ret[i] = this.answers.splice(randNumber, 1)[0];
-          }
+    public newDeal(): void {
+        console.log("New deal");
 
-      } else {
-          for (var i = 0; i < howMany; ++i) {
-              ret[i] = new AnswerCard("No more answers");
-          }
-      }
+        this.currentQuestion = this.randomQuestion();
+        this.currentAnswers = this.randomAnswers();
+        this.choosenAnswers = new Array<AnswerCard>(this.currentQuestion.getPick());
 
-      return ret;
-  }
+        // console.log("Remaining questions " + this.questions.length);
+        // console.log("Remaining answers " + this.answers.length);
+    }
 
-  public newDeal(): void {
-      console.log("New deal");
+    public newGame(): void {
+        console.log("New game");
 
-      this.currentQuestion = this.randomQuestion();
-      while (this.currentQuestion.getPick() <= 2) {
-          this.currentQuestion = this.randomQuestion();
-      }
+        this.initCardsLists()
+            .then((res) => {
+                this.cardsService.setCurrentLang(this.lang);
+                this.newDeal();
+            });
+    }
 
-      this.currentAnswers = this.randomAnswers();
-      this.choosenAnswers = new Array<AnswerCard>(this.currentQuestion.getPick());
+    /**
+     * Generate an array of index for the blanks cards.
+     */
+    private getBlanksAnswersArray(): number[] {
+        var arr = [];
 
-      // console.log("Remaining questions " + this.questions.length);
-      // console.log("Remaining answers " + this.answers.length);
-  }
+        for (var i = 0; i < this.currentQuestion.getPick(); ++i) {
+            arr.push(i);
+        }
 
-  public newGame(): void {
-      console.log("New game");
-      this.initCardsLists()
-          .then((res) => {
-              this.cardsService.setCurrentLang(this.lang);
-              this.newDeal();
-          });
-  }
+        return arr;
+    }
 
-  public switchLang(lang: string = "fr"): void {
-      console.log("New lang " + lang);
-      this.lang = lang;
+    /**
+     * When an answer is selected from the hand. It places them in order or
+     * "push" them to the next index
+     * @param a The answer clicked
+     */
+    private onAnswerClick(answer: AnswerCard): void {
 
-      this.newGame();
-  }
+        // Trying to add only of the answer is not already here
+        if (!this.choosenAnswers.find(
+            (el: AnswerCard, idx, arr) => {
+                return (null != el && el.getText() == answer.getText());
+            }
+        )) {
 
-  /**
-   * Generate an array of index for the blanks cards.
-   */
-  private getBlanksAnswersArray(): number[] {
-      var arr = [];
+            var index: number = 0;
 
-      for (var i = 0; i < this.currentQuestion.getPick(); ++i) {
-          arr.push(i);
-      }
+            // Search the greatest index we can push answer
+            while (this.choosenAnswers[index] != null) {
+                ++index;
+            }
 
-      return arr;
-  }
+            // If we are out of the array, we insert at first
+            if (index >= this.choosenAnswers.length) {
+                index = 0;
+            }
 
-  /**
-   * When an answer is selected from the hand. It places them in order or
-   * "push" them to the next index
-   * @param a The answer clicked
-   */
-  private onAnswerClick(answer: AnswerCard): void {
+            // Shift all existing cards until there is another blank
+            var i = 0;
+            var tmpAnswers: Array<AnswerCard> = this.choosenAnswers.slice(0);
+            while (index + i < this.choosenAnswers.length - 1 &&
+                this.choosenAnswers[index + i] != null) {
 
-      // Trying to add only of the answer is not already here
-      if (!this.choosenAnswers.find((el: AnswerCard, idx, arr) => {
-          if (null == el) {
-              return false;
-          } else {
-              console.log(el.getText() == answer.getText());
-              return el.getText() == answer.getText();
-          }
-      })) {
+                this.choosenAnswers[index + i + 1] = tmpAnswers[index + i];
+                ++i;
+            }
 
-          var index: number = 0;
+            // Update the view
+            this.choosenAnswers[index] = answer;
+        }
+    }
 
-          // Search the greatest index we can push answer
-          while (this.choosenAnswers[index] != null) {
-              ++index;
-          }
+    /**
+     * When clicking an answer in the preselected
+     * @param index The index of the answer card to dismiss
+     */
+    private onAnswerDismiss(index: number): void {
+        this.choosenAnswers[index] = null;
+    }
 
-          // If we are out of the array, we insert at first
-          if (index >= this.choosenAnswers.length) {
-              index = 0;
-          }
-
-          // Shift all existing cards until there is another blank
-          var i = 0;
-          var tmpAnswers: Array<AnswerCard> = this.choosenAnswers.slice(0);
-          while (index + i < this.choosenAnswers.length - 1 &&
-              this.choosenAnswers[index + i] != null) {
-              
-              this.choosenAnswers[index + i + 1] = tmpAnswers[index + i];
-              ++i;
-
-          }
-          
-          // Update the view
-          this.choosenAnswers[index] = answer;
-
-      }
-  }
-
-  /**
-   * When clicking an answer in the preselected
-   * @param index The index of the answer card to dismiss
-   */
-  private onAnswerDismiss(index: number): void {
-      this.choosenAnswers[index] = null;
-      console.log(this.currentQuestion.getPreview(this.choosenAnswers));
-  }
-
-  private getPreview(): string {
-      return this.currentQuestion.getPreview(this.choosenAnswers);
-  }
+    /**
+     * Get the question preview using the selected answers
+     */
+    private getPreview(): string {
+        return this.currentQuestion.getPreview(this.choosenAnswers);
+    }
 
 }

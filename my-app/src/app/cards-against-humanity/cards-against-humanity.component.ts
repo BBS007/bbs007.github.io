@@ -39,7 +39,7 @@ export class CardsAgainstHumanityComponent {
     private language: string;
 
     constructor(private cardsService: CardsService,
-    private router: Router) {
+        private router: Router) {
         this.username = "";
 
         // TODO: create a Lang class to format it properly
@@ -52,14 +52,18 @@ export class CardsAgainstHumanityComponent {
         // Checking that the username is provided
         if ("" != this.username) {
             console.log("Submited\n" + this.username + "\n" + this.language);
-            this.router.navigate(['/board']);
-      }
-    
-  }
-  
-  private langChanged(value: string) {
-      console.log("langChanged " + value);
-      this.language = value;
-  }
+
+            // Navigate to board using the given information
+            this.router.navigate(['/board', {
+                lang: this.language
+            }]);
+        }
+
+    }
+
+    private langChanged(value: string) {
+        console.log("langChanged " + value);
+        this.language = value;
+    }
 
 }
