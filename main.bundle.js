@@ -37,7 +37,7 @@ webpackEmptyContext.id = 147;
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(7);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(6);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_platform_browser_dynamic__ = __webpack_require__(155);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__app_app_module__ = __webpack_require__(157);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__environments_environment__ = __webpack_require__(159);
@@ -57,7 +57,7 @@ __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_1__angular_platform_browser_dyna
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(7);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(6);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_app_cards_against_humanity_cards_against_humanity_component__ = __webpack_require__(93);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return AppComponent; });
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
@@ -91,15 +91,15 @@ AppComponent = __decorate([
 
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_platform_browser__ = __webpack_require__(28);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_core__ = __webpack_require__(7);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_core__ = __webpack_require__(6);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_forms__ = __webpack_require__(154);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__angular_http__ = __webpack_require__(90);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__angular_router__ = __webpack_require__(91);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5_app_cards_cards_service__ = __webpack_require__(59);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__angular_http__ = __webpack_require__(91);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__angular_router__ = __webpack_require__(58);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5_app_cards_cards_service__ = __webpack_require__(60);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_6_app_app_component__ = __webpack_require__(156);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_7_app_cards_against_humanity_cards_against_humanity_component__ = __webpack_require__(93);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_8_app_cards_question_card_question_card_component__ = __webpack_require__(96);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9_app_cards_answer_card_answer_card_component__ = __webpack_require__(58);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9_app_cards_answer_card_answer_card_component__ = __webpack_require__(59);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_10_app_cards_holder_card_holder_card_component__ = __webpack_require__(95);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_11_app_board_board_component__ = __webpack_require__(92);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_12__not_found_not_found_component__ = __webpack_require__(158);
@@ -171,7 +171,7 @@ AppModule = __decorate([
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(7);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(6);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return NotFoundComponent; });
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -244,7 +244,7 @@ exports = module.exports = __webpack_require__(14)();
 
 
 // module
-exports.push([module.i, "/* Board */\r\n.board-back {\r\n    background: url(\"/assets/board-noise.jpg\");\r\n    background-color: rgba(0, 0, 0, 0.00);\r\n\r\n    z-index: 99; /* the highest */\r\n}\r\n\r\n.board {\r\n    height: 100%;\r\n    width: 100%;\r\n    min-height: 40em;\r\n    border: 20px solid rgb(65, 34, 34);\r\n    \r\n    background-color: rgba(18, 98, 18, 0.90);\r\n\r\n    box-shadow: inset 0 0 4em black;\r\n\r\n    padding: 1em;\r\n\r\n    z-index: 98;\r\n}\r\n\r\n.card {\r\n    z-index: 90;\r\n}\r\n\r\n/* Answers placement */\r\n/*\r\n.answers {\r\n    float: left;\r\n    position: relative;\r\n    left: 0;\r\n    bottom: -10em;\r\n}\r\n*/\r\n.answers > .answer:not(:first-child) {\r\n    /* The cards collapse on each other */\r\n    margin-left: -4em;\r\n}\r\n/*\r\n.answer {\r\n    float: left;\r\n}\r\n*/\r\n\r\n.answer:hover {\r\n    /* Bring to front when hovered */\r\n    position: relative;\r\n    z-index: 89;\r\n\r\n}\r\n\r\n/* Row margin */\r\n.row-margin {\r\n    margin-top: 5em;\r\n}", ""]);
+exports.push([module.i, "/* Board */\r\n.board-back {\r\n    background: url(\"/assets/board-noise.jpg\");\r\n    background-color: rgba(0, 0, 0, 0.00);\r\n\r\n    z-index: 99; /* the highest */\r\n}\r\n\r\n.board {\r\n    height: 100%;\r\n    width: 100%;\r\n    min-height: 40em;\r\n    border: 20px solid rgb(65, 34, 34);\r\n    \r\n    background-color: rgba(18, 98, 18, 0.90);\r\n\r\n    box-shadow: inset 0 0 4em black;\r\n\r\n    padding: 1em;\r\n\r\n    z-index: 98;\r\n}\r\n\r\n.card {\r\n    z-index: 90;\r\n}\r\n\r\n.answer:hover {\r\n    /* Bring to front when hovered */\r\n    position: relative;\r\n    z-index: 89;\r\n\r\n}\r\n\r\n/* Row margin */\r\n.row-margin {\r\n    margin-top: 5em;\r\n}\r\n\r\n.question-preview {\r\n    color: white;\r\n}", ""]);
 
 // exports
 
@@ -262,7 +262,7 @@ exports = module.exports = __webpack_require__(14)();
 
 
 // module
-exports.push([module.i, "", ""]);
+exports.push([module.i, "html {\r\n    background: url(\"/assets/board-noise.jpg\");\r\n    height: 100%;\r\n}\r\n\r\nbody {\r\n    background-color: rgba(18, 98, 18, 0.90);\r\n    height: 100%;\r\n}\r\n\r\n\r\n.full-height {\r\n    height: 100%;\r\n    margin-bottom: 0;\r\n    border-radius: 0px;\r\n    box-shadow: 0 0 4em black;\r\n\r\n    background-color: whitesmoke;\r\n    padding: 5em;\r\n}\r\n", ""]);
 
 // exports
 
@@ -280,7 +280,7 @@ exports = module.exports = __webpack_require__(14)();
 
 
 // module
-exports.push([module.i, "/* Answer card */\r\n.card-answer {\r\n    background-color: black;\r\n\r\n    box-shadow: 1em 1em 4em black;\r\n}\r\n\r\n.card-answer .card-text {\r\n    background-color: white;\r\n    color: black;\r\n}\r\n\r\n.card-answer:hover {\r\n    box-shadow: 0 0 4em white;\r\n}", ""]);
+exports.push([module.i, "/* Answer card */\r\n.card-answer {\r\n    background-color: black;\r\n\r\n    box-shadow: 1em 1em 4em black;\r\n}\r\n\r\n.card-answer .card-text {\r\n    background-color: ivory;\r\n    color: black;\r\n}\r\n\r\n.card-answer:hover {\r\n    box-shadow: 0 0 4em white;\r\n}", ""]);
 
 // exports
 
@@ -329,21 +329,21 @@ module.exports = module.exports.toString();
 /***/ 223:
 /***/ (function(module, exports) {
 
-module.exports = "<!-- The main router outlet -->\r\n<a [routerLink]=\"['/board']\">Board</a>\r\n<router-outlet></router-outlet>"
+module.exports = "<!-- The main router outlet -->\r\n<router-outlet></router-outlet>"
 
 /***/ }),
 
 /***/ 224:
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"board-back\">\n\n  <div class=\"board\">\n\n\n    <div class=\"pull-right\">\n      <div class=\"btn-group btn-block\">\n        <button (click)=\"switchLang('fr')\" class=\"btn btn-default\" [class.active]=\"lang == 'fr'\">\n                        <img src=\"/assets/blank.gif\" alt=\"French\" class=\"flag flag-fr\"/>\n                    </button>\n        <button (click)=\"switchLang('en')\" class=\"btn btn-default\" [class.active]=\"lang == 'en'\">\n                        <img src=\"/assets/blank.gif\" alt=\"English\" class=\"flag flag-us\"/>\n                    </button>\n      </div>\n\n      <button (click)=\"newGame()\" class=\"btn btn-block btn-success\">New Game</button>\n      <button (click)=\"newDeal()\" class=\"btn btn-block btn-success\">New Deal</button>\n    </div>\n\n\n    <div class=\"container-fluid\">\n      <div class=\"row\">\n        <div *ngIf=\"currentQuestion\">\n          <app-question-card [card]=\"currentQuestion\" class=\"col-sm-3\">\n          </app-question-card>\n        </div>\n      </div>\n      <!-- </div>\n    \n            <div class=\"container-fluid\"> -->\n      <div class=\"row row-margin\">\n        <div *ngIf=\"currentQuestion\">\n          <div *ngFor=\"let i of getBlanksAnswersArray()\">\n            <app-holder-card [answer]=\"choosenAnswers[i]\" (click)=\"onAnswerDismiss(i)\" class=\"col-sm-3\">\n            </app-holder-card>\n          </div>\n        </div>\n      </div>\n    </div>\n\n\n    <div *ngIf=\"currentQuestion\">\n      {{getPreview()}}\n    </div>\n\n    <div *ngIf=\"currentAnswers\" class=\"answers\">\n\n      <ng-container *ngFor=\"let a of currentAnswers\">\n\n        <app-answer-card [card]=\"a\" (click)=\"onAnswerClick(a)\" class=\"answer card-hand\">\n        </app-answer-card>\n\n      </ng-container>\n\n    </div>\n  </div>\n\n</div>"
+module.exports = "<div class=\"board-back\">\n\n  <div class=\"board\">\n\n    <!-- Information -->\n    <div class=\"pull-right\">\n      <button (click)=\"newGame()\" class=\"btn btn-block btn-primary\">New Game</button>\n      <button (click)=\"newDeal()\" class=\"btn btn-block btn-success\">New Deal</button>\n    </div>\n\n    <!-- Cards -->\n    <div *ngIf=\"currentQuestion\" class=\"container-fluid\">\n\n      <!-- Question -->\n      <div class=\"row\">\n        <app-question-card [card]=\"currentQuestion\" class=\"col-sm-3\">\n        </app-question-card>\n\n        <div class=\"question-preview col-sm-9\">\n          {{getPreview()}}\n        </div>\n      </div>\n\n      <div class=\"row row-margin\">\n        <div *ngFor=\"let i of getBlanksAnswersArray()\">\n          <app-holder-card [answer]=\"choosenAnswers[i]\" (click)=\"onAnswerDismiss(i)\" class=\"col-sm-3\">\n          </app-holder-card>\n        </div>\n      </div>\n\n\n      <div *ngIf=\"currentAnswers\" class=\"row row-margin\">\n        <div *ngFor=\"let a of currentAnswers\">\n          <app-answer-card [card]=\"a\" (click)=\"onAnswerClick(a)\" class=\"answer col-sm-1\">\n          </app-answer-card>\n        </div>\n      </div>\n    </div>\n\n\n\n  </div>\n\n</div>"
 
 /***/ }),
 
 /***/ 225:
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"jumbotron\">\r\n    <h1>\r\n        Cards\r\n    </h1>\r\n    <p>A card game</p>\r\n\r\n    <hr>\r\n\r\n    <form (ngSubmit)=\"onSubmit()\">\r\n        <div class=\"form-group\">\r\n            <label for=\"username\"> Username: </label>\r\n            <input class=\"form-control success\" name=\"username\" required [(ngModel)]=\"username\" placeholder=\"username\" type=\"text\">\r\n        </div>\r\n\r\n        <div class=\"form-group\">\r\n            <label>Language: </label>\r\n            <div *ngIf=\"languages\">\r\n                <select class=\"form-control\" #t (change)=\"langChanged(t.value)\">\r\n                    <option *ngFor=\"let lang of languages\" [value]=\"lang.value\">\r\n                        {{lang.text}}\r\n                    </option>\r\n                </select>\r\n\r\n            </div>\r\n        </div>\r\n\r\n        <button type=\"submit\" class=\"btn btn-success\">Let's Go!</button>\r\n    </form>\r\n\r\n\r\n\r\n    <!-- <input [(ngModel)]=\"person.firstName\" name=\"first\"> -->\r\n\r\n</div>"
+module.exports = "<div class=\"container full-height\">\r\n    \r\n        <h1>\r\n            Cards\r\n        </h1>\r\n        <h2>A card game</h2>\r\n\r\n        <hr>\r\n\r\n        <form (ngSubmit)=\"onSubmit()\">\r\n            <div class=\"form-group\">\r\n                <label for=\"username\"> Username: </label>\r\n                <input class=\"form-control success\" name=\"username\" required [(ngModel)]=\"username\" placeholder=\"username\" type=\"text\">\r\n            </div>\r\n\r\n            <div class=\"form-group\">\r\n                <label>Language: </label>\r\n                <div *ngIf=\"languages\">\r\n                    <select class=\"form-control\" #select (change)=\"langChanged(select.value)\">\r\n                    <option *ngFor=\"let lang of languages\" [value]=\"lang.value\">\r\n                        {{lang.text}}\r\n                    </option>\r\n                </select>\r\n\r\n                </div>\r\n            </div>\r\n\r\n            <button type=\"submit\" class=\"btn btn-success\">Let's Go!</button>\r\n        </form>\r\n\r\n    \r\n\r\n</div>"
 
 /***/ }),
 
@@ -422,11 +422,11 @@ module.exports = __webpack_require__(148);
 
 /***/ }),
 
-/***/ 58:
+/***/ 59:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(7);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(6);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__answer_card__ = __webpack_require__(42);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return AnswerCardComponent; });
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
@@ -455,7 +455,7 @@ AnswerCardComponent = __decorate([
     __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Y" /* Component */])({
         selector: 'app-answer-card',
         template: __webpack_require__(226),
-        styles: [__webpack_require__(77), __webpack_require__(218)]
+        styles: [__webpack_require__(78), __webpack_require__(218)]
     }),
     __metadata("design:paramtypes", [])
 ], AnswerCardComponent);
@@ -465,15 +465,15 @@ var _a;
 
 /***/ }),
 
-/***/ 59:
+/***/ 60:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(7);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_http__ = __webpack_require__(90);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(6);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_http__ = __webpack_require__(91);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_rxjs_Rx__ = __webpack_require__(231);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_rxjs_Rx___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2_rxjs_Rx__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__question_card_question_card__ = __webpack_require__(60);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__question_card_question_card__ = __webpack_require__(61);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__answer_card_answer_card__ = __webpack_require__(42);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return CardsService; });
 /**
@@ -571,7 +571,7 @@ var _a;
 
 /***/ }),
 
-/***/ 60:
+/***/ 61:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -644,7 +644,7 @@ QuestionCard.BLANK_CHAR = '_';
 
 /***/ }),
 
-/***/ 77:
+/***/ 78:
 /***/ (function(module, exports, __webpack_require__) {
 
 exports = module.exports = __webpack_require__(14)();
@@ -662,7 +662,7 @@ module.exports = module.exports.toString();
 
 /***/ }),
 
-/***/ 78:
+/***/ 79:
 /***/ (function(module, exports, __webpack_require__) {
 
 exports = module.exports = __webpack_require__(14)();
@@ -684,14 +684,14 @@ module.exports = module.exports.toString();
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(7);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_router__ = __webpack_require__(91);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(6);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_router__ = __webpack_require__(58);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_common__ = __webpack_require__(41);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_app_cards_cards_service__ = __webpack_require__(59);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_app_cards_question_card_question_card__ = __webpack_require__(60);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_app_cards_cards_service__ = __webpack_require__(60);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_app_cards_question_card_question_card__ = __webpack_require__(61);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5_app_cards_answer_card_answer_card__ = __webpack_require__(42);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_6_app_cards_question_card_question_card_component__ = __webpack_require__(96);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7_app_cards_answer_card_answer_card_component__ = __webpack_require__(58);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7_app_cards_answer_card_answer_card_component__ = __webpack_require__(59);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_8_app_cards_holder_card_holder_card_component__ = __webpack_require__(95);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return BoardComponent; });
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
@@ -720,17 +720,16 @@ var BoardComponent = (function () {
         this.cardsService = cardsService;
         this.route = route;
         this.location = location;
+        // The lang support
+        this.lang = "fr"; // TODO: from default class
         // Init lists to null so nothing is displayed
         this.currentQuestion = null;
         this.currentAnswers = null;
         this.choosenAnswers = [];
-        // Default lang is fr
-        this.lang = "fr";
         // Start a new game
         this.newGame();
+        console.log("New board created with lang " + this.lang);
     }
-    BoardComponent.prototype.ngOnInit = function () {
-    };
     /**
      * Will fetch the lists in a promise.
      * @return a promise that is resolved when lists are reset.
@@ -789,9 +788,6 @@ var BoardComponent = (function () {
     BoardComponent.prototype.newDeal = function () {
         console.log("New deal");
         this.currentQuestion = this.randomQuestion();
-        while (this.currentQuestion.getPick() <= 2) {
-            this.currentQuestion = this.randomQuestion();
-        }
         this.currentAnswers = this.randomAnswers();
         this.choosenAnswers = new Array(this.currentQuestion.getPick());
         // console.log("Remaining questions " + this.questions.length);
@@ -805,12 +801,6 @@ var BoardComponent = (function () {
             _this.cardsService.setCurrentLang(_this.lang);
             _this.newDeal();
         });
-    };
-    BoardComponent.prototype.switchLang = function (lang) {
-        if (lang === void 0) { lang = "fr"; }
-        console.log("New lang " + lang);
-        this.lang = lang;
-        this.newGame();
     };
     /**
      * Generate an array of index for the blanks cards.
@@ -830,13 +820,7 @@ var BoardComponent = (function () {
     BoardComponent.prototype.onAnswerClick = function (answer) {
         // Trying to add only of the answer is not already here
         if (!this.choosenAnswers.find(function (el, idx, arr) {
-            if (null == el) {
-                return false;
-            }
-            else {
-                console.log(el.getText() == answer.getText());
-                return el.getText() == answer.getText();
-            }
+            return (null != el && el.getText() == answer.getText());
         })) {
             var index = 0;
             // Search the greatest index we can push answer
@@ -865,18 +849,24 @@ var BoardComponent = (function () {
      */
     BoardComponent.prototype.onAnswerDismiss = function (index) {
         this.choosenAnswers[index] = null;
-        console.log(this.currentQuestion.getPreview(this.choosenAnswers));
     };
+    /**
+     * Get the question preview using the selected answers
+     */
     BoardComponent.prototype.getPreview = function () {
         return this.currentQuestion.getPreview(this.choosenAnswers);
     };
     return BoardComponent;
 }());
+__decorate([
+    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["M" /* Input */])(),
+    __metadata("design:type", String)
+], BoardComponent.prototype, "lang", void 0);
 BoardComponent = __decorate([
     __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Y" /* Component */])({
         selector: 'app-board',
         template: __webpack_require__(224),
-        styles: [__webpack_require__(216), __webpack_require__(78), __webpack_require__(108)],
+        styles: [__webpack_require__(216), __webpack_require__(79), __webpack_require__(108)],
         providers: [
             __WEBPACK_IMPORTED_MODULE_3_app_cards_cards_service__["a" /* CardsService */]
         ],
@@ -898,9 +888,10 @@ var _a, _b, _c;
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(7);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_app_board_board_component__ = __webpack_require__(92);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_app_cards_cards_service__ = __webpack_require__(59);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(6);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_router__ = __webpack_require__(58);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_app_board_board_component__ = __webpack_require__(92);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_app_cards_cards_service__ = __webpack_require__(60);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return CardsAgainstHumanityComponent; });
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -912,21 +903,29 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 
+
+
 // Components
 
 // Services
 
 var CardsAgainstHumanityComponent = (function () {
-    function CardsAgainstHumanityComponent(cardsService) {
+    function CardsAgainstHumanityComponent(cardsService, router) {
         this.cardsService = cardsService;
+        this.router = router;
         this.username = "";
         // TODO: create a Lang class to format it properly
         this.languages = this.cardsService.getAvailableLanguages();
         this.language = this.languages[0].value;
     }
     CardsAgainstHumanityComponent.prototype.onSubmit = function () {
+        // Checking that the username is provided
         if ("" != this.username) {
             console.log("Submited\n" + this.username + "\n" + this.language);
+            // Navigate to board using the given information
+            this.router.navigate(['/board', {
+                    lang: this.language
+                }]);
         }
     };
     CardsAgainstHumanityComponent.prototype.langChanged = function (value) {
@@ -939,18 +938,19 @@ CardsAgainstHumanityComponent = __decorate([
     __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Y" /* Component */])({
         selector: 'app-cards-against-humanity',
         template: __webpack_require__(225),
-        styles: [__webpack_require__(217), __webpack_require__(78), __webpack_require__(108)],
+        styles: [__webpack_require__(217), __webpack_require__(79), __webpack_require__(108)],
         entryComponents: [
-            __WEBPACK_IMPORTED_MODULE_1_app_board_board_component__["a" /* BoardComponent */]
+            __WEBPACK_IMPORTED_MODULE_2_app_board_board_component__["a" /* BoardComponent */]
         ],
         providers: [
-            __WEBPACK_IMPORTED_MODULE_2_app_cards_cards_service__["a" /* CardsService */]
-        ]
+            __WEBPACK_IMPORTED_MODULE_3_app_cards_cards_service__["a" /* CardsService */]
+        ],
+        encapsulation: __WEBPACK_IMPORTED_MODULE_0__angular_core__["o" /* ViewEncapsulation */].None // Allows to change elements from other view (styling)
     }),
-    __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_2_app_cards_cards_service__["a" /* CardsService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2_app_cards_cards_service__["a" /* CardsService */]) === "function" && _a || Object])
+    __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_3_app_cards_cards_service__["a" /* CardsService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_3_app_cards_cards_service__["a" /* CardsService */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_1__angular_router__["c" /* Router */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__angular_router__["c" /* Router */]) === "function" && _b || Object])
 ], CardsAgainstHumanityComponent);
 
-var _a;
+var _a, _b;
 //# sourceMappingURL=cards-against-humanity.component.js.map
 
 /***/ }),
@@ -981,9 +981,9 @@ var Card = (function () {
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(7);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(6);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__answer_card_answer_card__ = __webpack_require__(42);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__answer_card_answer_card_component__ = __webpack_require__(58);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__answer_card_answer_card_component__ = __webpack_require__(59);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return HolderCardComponent; });
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -1010,7 +1010,7 @@ HolderCardComponent = __decorate([
     __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Y" /* Component */])({
         selector: 'app-holder-card',
         template: __webpack_require__(227),
-        styles: [__webpack_require__(77), __webpack_require__(219)],
+        styles: [__webpack_require__(78), __webpack_require__(219)],
         entryComponents: [
             __WEBPACK_IMPORTED_MODULE_2__answer_card_answer_card_component__["a" /* AnswerCardComponent */]
         ]
@@ -1027,8 +1027,8 @@ var _a;
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(7);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__question_card__ = __webpack_require__(60);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(6);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__question_card__ = __webpack_require__(61);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return QuestionCardComponent; });
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -1056,7 +1056,7 @@ QuestionCardComponent = __decorate([
     __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Y" /* Component */])({
         selector: 'app-question-card',
         template: __webpack_require__(228),
-        styles: [__webpack_require__(77), __webpack_require__(78)]
+        styles: [__webpack_require__(78), __webpack_require__(79)]
     }),
     __metadata("design:paramtypes", [])
 ], QuestionCardComponent);
