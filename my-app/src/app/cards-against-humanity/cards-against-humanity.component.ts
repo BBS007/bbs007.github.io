@@ -1,5 +1,7 @@
 import { Component } from '@angular/core';
 import { FormsModule } from "@angular/forms";
+import { ViewEncapsulation } from "@angular/core";
+import { Router } from "@angular/router";
 
 // Classes
 import { Player } from "./player";
@@ -23,7 +25,8 @@ import { CardsService } from "app/cards/cards.service";
     ],
     providers: [
         CardsService
-    ]
+    ],
+    encapsulation: ViewEncapsulation.None // Allows to change elements from other view (styling)
 })
 
 
@@ -35,7 +38,8 @@ export class CardsAgainstHumanityComponent {
 
     private language: string;
 
-    constructor(private cardsService: CardsService) {
+    constructor(private cardsService: CardsService,
+    private router: Router) {
         this.username = "";
 
         // TODO: create a Lang class to format it properly
@@ -45,8 +49,10 @@ export class CardsAgainstHumanityComponent {
 
 
     private onSubmit() {
+        // Checking that the username is provided
         if ("" != this.username) {
             console.log("Submited\n" + this.username + "\n" + this.language);
+            this.router.navigate(['/board']);
       }
     
   }
