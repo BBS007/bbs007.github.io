@@ -22,7 +22,10 @@ const appRoutes: Routes = [
 
     // Pages
     { path: "cah", component: CardsAgainstHumanityComponent },
-    { path: "board", component: BoardComponent },
+    {
+        path: "board/:lang",
+        component: BoardComponent
+    },
 
     // Not found
     { path: "**", component: NotFoundComponent }

@@ -54,7 +54,7 @@ export class CardsService {
         return this.currentLang != lang;
     }
 
-    public getQuestionCards(lang:string = "fr"): Observable<QuestionCard[]> {
+    public getQuestionCards(lang:string): Observable<QuestionCard[]> {
         var url = this.chooseUrl(lang);
 
         if (!this.dataQuestion || this.isLangChanged(lang)) {
@@ -71,7 +71,7 @@ export class CardsService {
     }
 
 
-    public getAnswserCards(lang:string = "fr"): Observable<AnswerCard[]> {
+    public getAnswserCards(lang:string): Observable<AnswerCard[]> {
         var url = this.chooseUrl(lang);
         
         if (!this.dataAnswer || this.isLangChanged(lang)) {

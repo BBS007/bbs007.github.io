@@ -54,9 +54,7 @@ export class CardsAgainstHumanityComponent {
             console.log("Submited\n" + this.username + "\n" + this.language);
 
             // Navigate to board using the given information
-            this.router.navigate(['/board', {
-                lang: this.language
-            }]);
+            this.router.navigate(['/board', this.language]);
         }
 
     }

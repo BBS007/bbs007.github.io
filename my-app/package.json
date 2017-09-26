@@ -5,7 +5,7 @@
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
-    "deploy": "ng build && gulp deploy",
+    "deploy": "ng build --bh ./ && gulp deploy",
     "clean": "gulp clean",
     "test": "ng test",
     "lint": "ng lint",

@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { ActivatedRoute, Params } from '@angular/router';
 import { Location } from '@angular/common';
 
@@ -32,7 +32,8 @@ import { HolderCardComponent } from 'app/cards/holder-card/holder-card.component
     ]
 })
 
-export class BoardComponent {
+export class BoardComponent implements OnInit{
+
 
     // The complete lists
     private questions: QuestionCard[];
@@ -45,22 +46,32 @@ export class BoardComponent {
     private choosenAnswers: AnswerCard[];
 
     // The lang support
-    @Input() lang: string = "fr"; // TODO: from default class
+    @Input() lang: string; // TODO: from default class
 
     constructor(
         private cardsService: CardsService,
         private route: ActivatedRoute,
         private location: Location
     ) {
+        console.log("CTOR");
         // Init lists to null so nothing is displayed
         this.currentQuestion = null;
         this.currentAnswers = null;
         this.choosenAnswers = [];
 
-        // Start a new game
-        this.newGame();
-
         console.log("New board created with lang " + this.lang);
+        
+        // Start a new game
+    }
+    
+    ngOnInit(): void {
+        console.log("Init");
+        this.route.params.subscribe(
+            params => {
+                this.lang = params.lang;
+                this.newGame();
+            }
+        )
     }
 
     /**
