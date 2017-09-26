@@ -25,24 +25,7 @@
     z-index: 90;
 }
 
-/* Answers placement */
-/*
-.answers {
-    float: left;
-    position: relative;
-    left: 0;
-    bottom: -10em;
-}
-*/
-.answers > .answer:not(:first-child) {
-    /* The cards collapse on each other */
-    margin-left: -4em;
-}
-/*
-.answer {
-    float: left;
-}
-*/
+
 
 .answer:hover {
     /* Bring to front when hovered */
@@ -54,4 +37,8 @@
 /* Row margin */
 .row-margin {
     margin-top: 5em;
+}
+
+.question-preview {
+    color: white;
 }
