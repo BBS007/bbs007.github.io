@@ -130,7 +130,10 @@ var appRoutes = [
     { path: "", redirectTo: "/cah", pathMatch: "full" },
     // Pages
     { path: "cah", component: __WEBPACK_IMPORTED_MODULE_7_app_cards_against_humanity_cards_against_humanity_component__["a" /* CardsAgainstHumanityComponent */] },
-    { path: "board", component: __WEBPACK_IMPORTED_MODULE_11_app_board_board_component__["a" /* BoardComponent */] },
+    {
+        path: "board/:lang",
+        component: __WEBPACK_IMPORTED_MODULE_11_app_board_board_component__["a" /* BoardComponent */]
+    },
     // Not found
     { path: "**", component: __WEBPACK_IMPORTED_MODULE_12__not_found_not_found_component__["a" /* NotFoundComponent */] }
 ];
@@ -244,7 +247,7 @@ exports = module.exports = __webpack_require__(14)();
 
 
 // module
-exports.push([module.i, "/* Board */\r\n.board-back {\r\n    background: url(\"/assets/board-noise.jpg\");\r\n    background-color: rgba(0, 0, 0, 0.00);\r\n\r\n    z-index: 99; /* the highest */\r\n}\r\n\r\n.board {\r\n    height: 100%;\r\n    width: 100%;\r\n    min-height: 40em;\r\n    border: 20px solid rgb(65, 34, 34);\r\n    \r\n    background-color: rgba(18, 98, 18, 0.90);\r\n\r\n    box-shadow: inset 0 0 4em black;\r\n\r\n    padding: 1em;\r\n\r\n    z-index: 98;\r\n}\r\n\r\n.card {\r\n    z-index: 90;\r\n}\r\n\r\n.answer:hover {\r\n    /* Bring to front when hovered */\r\n    position: relative;\r\n    z-index: 89;\r\n\r\n}\r\n\r\n/* Row margin */\r\n.row-margin {\r\n    margin-top: 5em;\r\n}\r\n\r\n.question-preview {\r\n    color: white;\r\n}", ""]);
+exports.push([module.i, "/* Board */\r\n.board-back {\r\n    \r\n    background: url(\"/./assets/board-noise.jpg\");\r\n    background-color: rgba(0, 0, 0, 0.00);\r\n    \r\n    z-index: 99; /* the highest */\r\n}\r\n\r\n.board {\r\n    height: 100%;\r\n    width: 100%;\r\n    min-height: 40em;\r\n    border: 20px solid rgb(65, 34, 34);\r\n    \r\n    background-color: rgba(18, 98, 18, 0.90);\r\n\r\n    box-shadow: inset 0 0 4em black;\r\n\r\n    padding: 1em;\r\n\r\n    z-index: 98;\r\n}\r\n\r\n.card {\r\n    z-index: 90;\r\n}\r\n\r\n.answer:hover {\r\n    /* Bring to front when hovered */\r\n    position: relative;\r\n    z-index: 89;\r\n\r\n}\r\n\r\n/* Row margin */\r\n.row-margin {\r\n    margin-top: 5em;\r\n}\r\n\r\n.question-preview {\r\n    color: white;\r\n}", ""]);
 
 // exports
 
@@ -262,7 +265,7 @@ exports = module.exports = __webpack_require__(14)();
 
 
 // module
-exports.push([module.i, "html {\r\n    background: url(\"/assets/board-noise.jpg\");\r\n    height: 100%;\r\n}\r\n\r\nbody {\r\n    background-color: rgba(18, 98, 18, 0.90);\r\n    height: 100%;\r\n}\r\n\r\n\r\n.full-height {\r\n    height: 100%;\r\n    margin-bottom: 0;\r\n    border-radius: 0px;\r\n    box-shadow: 0 0 4em black;\r\n\r\n    background-color: whitesmoke;\r\n    padding: 5em;\r\n}\r\n", ""]);
+exports.push([module.i, "html {\r\n    background: url(\"/./assets/board-noise.jpg\");\r\n    height: 100%;\r\n}\r\n\r\nbody {\r\n    background-color: rgba(18, 98, 18, 0.90);\r\n    height: 100%;\r\n}\r\n\r\n\r\n.full-height {\r\n    height: 100%;\r\n    margin-bottom: 0;\r\n    border-radius: 0px;\r\n    box-shadow: 0 0 4em black;\r\n\r\n    background-color: whitesmoke;\r\n    padding: 5em;\r\n}\r\n", ""]);
 
 // exports
 
@@ -280,7 +283,7 @@ exports = module.exports = __webpack_require__(14)();
 
 
 // module
-exports.push([module.i, "/* Answer card */\r\n.card-answer {\r\n    background-color: black;\r\n\r\n    box-shadow: 1em 1em 4em black;\r\n}\r\n\r\n.card-answer .card-text {\r\n    background-color: ivory;\r\n    color: black;\r\n}\r\n\r\n.card-answer:hover {\r\n    box-shadow: 0 0 4em white;\r\n}", ""]);
+exports.push([module.i, "/* Answer card */\r\n.card-answer {\r\n    background-color: black;\r\n\r\n    box-shadow: 0em 0em 1em black;\r\n}\r\n\r\n.card-answer .card-text {\r\n    background-color: ivory;\r\n    color: black;\r\n}\r\n\r\n.card-answer:hover {\r\n    box-shadow: 0 0 4em white;\r\n}", ""]);
 
 // exports
 
@@ -298,7 +301,7 @@ exports = module.exports = __webpack_require__(14)();
 
 
 // module
-exports.push([module.i, "/* Holder card */\r\n.card-holder {\r\n    background-color: rgba(255, 255, 255, 0.3);\r\n}", ""]);
+exports.push([module.i, "/* Holder card */\r\n.card-holder {\r\n    background-color: rgba(255, 255, 240, 0.2);\r\n}", ""]);
 
 // exports
 
@@ -523,7 +526,6 @@ var CardsService = (function () {
         return this.currentLang != lang;
     };
     CardsService.prototype.getQuestionCards = function (lang) {
-        if (lang === void 0) { lang = "fr"; }
         var url = this.chooseUrl(lang);
         if (!this.dataQuestion || this.isLangChanged(lang)) {
             this.dataQuestion = this.http.get(url)
@@ -536,7 +538,6 @@ var CardsService = (function () {
         return this.dataQuestion;
     };
     CardsService.prototype.getAnswserCards = function (lang) {
-        if (lang === void 0) { lang = "fr"; }
         var url = this.chooseUrl(lang);
         if (!this.dataAnswer || this.isLangChanged(lang)) {
             this.dataAnswer = this.http.get(url)
@@ -652,7 +653,7 @@ exports = module.exports = __webpack_require__(14)();
 
 
 // module
-exports.push([module.i, "/* Global cards style */\r\n.card {\r\n    display: table;\r\n    position: relative;\r\n    width: 12em;\r\n    height: 16em;\r\n    padding: 0.5em;\r\n\r\n    font-family: Arial, Helvetica, sans-serif;\r\n\r\n    border: 1px solid black;\r\n    border-radius: 2em;\r\n\r\n    background-color: white;\r\n\r\n}\r\n\r\n.card-text {\r\n    display: table-cell;\r\n    width: inherit;\r\n    height: inherit;\r\n    margin: 0.5em;\r\n    padding: 0.5em;\r\n    \r\n    text-align: center;\r\n    vertical-align: middle;\r\n\r\n    border: 1px solid black;\r\n    border-radius: 1.5em;\r\n}\r\n", ""]);
+exports.push([module.i, "/* Global cards style */\r\n.card {\r\n    display: table;\r\n    position: relative;\r\n    width: 12em;\r\n    height: 16em;\r\n    padding: 0.5em;\r\n\r\n    font-family: Arial, Helvetica, sans-serif;\r\n\r\n    border: 1px solid black;\r\n    border-radius: 2em;\r\n\r\n    background-color: ivory;\r\n\r\n}\r\n\r\n.card-text {\r\n    display: table-cell;\r\n    width: inherit;\r\n    height: inherit;\r\n    margin: 0.5em;\r\n    padding: 0.5em;\r\n    \r\n    text-align: center;\r\n    vertical-align: middle;\r\n\r\n    border: 1px solid black;\r\n    border-radius: 1.5em;\r\n}\r\n", ""]);
 
 // exports
 
@@ -670,7 +671,7 @@ exports = module.exports = __webpack_require__(14)();
 
 
 // module
-exports.push([module.i, "/* Question card */\r\n.card-question {\r\n    background: white;\r\n\r\n    box-shadow: 0em 0em 1em black;\r\n}\r\n\r\n.card-question .card-text {\r\n    background-color: black;\r\n    color: white;\r\n}\r\n\r\n.card-text .card-pick {\r\n    /*padding: 0.5em;*/\r\n    /*padding-bottom: 0.5em;*/\r\n\r\n    min-width: 2.5em;\r\n    height: 2.5em;\r\n\r\n    color: white;\r\n    position: absolute;\r\n    bottom: 0;\r\n    right: 0;\r\n\r\n    border-top-left-radius: 20px;\r\n    border-left: 1px solid white;\r\n    border-top: 1px solid white;\r\n}\r\n", ""]);
+exports.push([module.i, "/* Question card */\r\n.card-question {\r\n    background: ivory;\r\n\r\n    box-shadow: 0em 0em 1em black;\r\n}\r\n\r\n.card-question .card-text {\r\n    background-color: black;\r\n    color: ivory;\r\n}\r\n\r\n.card-text .card-pick {\r\n    /*padding: 0.5em;*/\r\n    /*padding-bottom: 0.5em;*/\r\n\r\n    min-width: 2.5em;\r\n    height: 2.5em;\r\n\r\n    color: ivory;\r\n    position: absolute;\r\n    bottom: 0;\r\n    right: 0;\r\n\r\n    border-top-left-radius: 20px;\r\n    border-left: 1px solid ivory;\r\n    border-top: 1px solid ivory;\r\n}\r\n", ""]);
 
 // exports
 
@@ -720,16 +721,21 @@ var BoardComponent = (function () {
         this.cardsService = cardsService;
         this.route = route;
         this.location = location;
-        // The lang support
-        this.lang = "fr"; // TODO: from default class
         // Init lists to null so nothing is displayed
         this.currentQuestion = null;
         this.currentAnswers = null;
         this.choosenAnswers = [];
-        // Start a new game
-        this.newGame();
-        console.log("New board created with lang " + this.lang);
     }
+    BoardComponent.prototype.ngOnInit = function () {
+        var _this = this;
+        // Recover the URL parameters
+        this.route.params.subscribe(function (params) {
+            if (null != params) {
+                _this.lang = params.lang;
+            }
+            _this.newGame();
+        });
+    };
     /**
      * Will fetch the lists in a promise.
      * @return a promise that is resolved when lists are reset.
@@ -923,9 +929,7 @@ var CardsAgainstHumanityComponent = (function () {
         if ("" != this.username) {
             console.log("Submited\n" + this.username + "\n" + this.language);
             // Navigate to board using the given information
-            this.router.navigate(['/board', {
-                    lang: this.language
-                }]);
+            this.router.navigate(['/board', this.language]);
         }
     };
     CardsAgainstHumanityComponent.prototype.langChanged = function (value) {

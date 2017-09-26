@@ -1,8 +1,9 @@
 /* Board */
 .board-back {
+    
     background: url("/assets/board-noise.jpg");
     background-color: rgba(0, 0, 0, 0.00);
-
+    
     z-index: 99; /* the highest */
 }
 

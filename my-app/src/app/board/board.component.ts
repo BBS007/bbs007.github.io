@@ -8,6 +8,7 @@ import { CardsService } from 'app/cards/cards.service';
 // Classes
 import { QuestionCard } from "app/cards/question-card/question-card";
 import { AnswerCard } from "app/cards/answer-card/answer-card";
+import { Player } from "app/player/player";
 
 // Components
 import { QuestionCardComponent } from 'app/cards/question-card/question-card.component';
@@ -34,7 +35,6 @@ import { HolderCardComponent } from 'app/cards/holder-card/holder-card.component
 
 export class BoardComponent implements OnInit{
 
-
     // The complete lists
     private questions: QuestionCard[];
     private answers: AnswerCard[];
@@ -43,6 +43,8 @@ export class BoardComponent implements OnInit{
     private currentQuestion: QuestionCard;
     private currentAnswers: AnswerCard[];
 
+    // User management
+    private playerList: Player[];
     private choosenAnswers: AnswerCard[];
 
     // The lang support
@@ -53,22 +55,20 @@ export class BoardComponent implements OnInit{
         private route: ActivatedRoute,
         private location: Location
     ) {
-        console.log("CTOR");
         // Init lists to null so nothing is displayed
         this.currentQuestion = null;
         this.currentAnswers = null;
         this.choosenAnswers = [];
-
-        console.log("New board created with lang " + this.lang);
-        
-        // Start a new game
     }
     
     ngOnInit(): void {
-        console.log("Init");
+        // Recover the URL parameters
         this.route.params.subscribe(
             params => {
-                this.lang = params.lang;
+                if (null != params) {
+                    this.lang = params.lang;
+                }
+
                 this.newGame();
             }
         )

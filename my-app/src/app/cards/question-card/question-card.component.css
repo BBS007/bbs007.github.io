@@ -1,13 +1,13 @@
 /* Question card */
 .card-question {
-    background: white;
+    background: ivory;
 
     box-shadow: 0em 0em 1em black;
 }
 
 .card-question .card-text {
     background-color: black;
-    color: white;
+    color: ivory;
 }
 
 .card-text .card-pick {
@@ -17,12 +17,12 @@
     min-width: 2.5em;
     height: 2.5em;
 
-    color: white;
+    color: ivory;
     position: absolute;
     bottom: 0;
     right: 0;
 
     border-top-left-radius: 20px;
-    border-left: 1px solid white;
-    border-top: 1px solid white;
+    border-left: 1px solid ivory;
+    border-top: 1px solid ivory;
 }
