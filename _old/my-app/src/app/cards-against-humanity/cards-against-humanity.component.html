@@ -1,0 +1,33 @@
+<div class="container full-height">
+    
+        <h1>
+            Cards
+        </h1>
+        <h2>A card game</h2>
+
+        <hr>
+
+        <form (ngSubmit)="onSubmit()">
+            <div class="form-group">
+                <label for="username"> Username: </label>
+                <input class="form-control success" name="username" required [(ngModel)]="username" placeholder="username" type="text">
+            </div>
+
+            <div class="form-group">
+                <label>Language: </label>
+                <div *ngIf="languages">
+                    <select class="form-control" #select (change)="langChanged(select.value)">
+                    <option *ngFor="let lang of languages" [value]="lang.value">
+                        {{lang.text}}
+                    </option>
+                </select>
+
+                </div>
+            </div>
+
+            <button type="submit" class="btn btn-success">Let's Go!</button>
+        </form>
+
+    
+
+</div>

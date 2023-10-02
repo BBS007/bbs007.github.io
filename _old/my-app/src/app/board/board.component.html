@@ -1,0 +1,44 @@
+<div class="board-back">
+
+  <div class="board">
+
+    <!-- Information -->
+    <div class="pull-right">
+      <button (click)="newGame()" class="btn btn-block btn-primary">New Game</button>
+      <button (click)="newDeal()" class="btn btn-block btn-success">New Deal</button>
+    </div>
+
+    <!-- Cards -->
+    <div *ngIf="currentQuestion" class="container-fluid">
+
+      <!-- Question -->
+      <div class="row">
+        <app-question-card [card]="currentQuestion" class="col-sm-3">
+        </app-question-card>
+
+        <div class="question-preview col-sm-9">
+          {{getPreview()}}
+        </div>
+      </div>
+
+      <div class="row row-margin">
+        <div *ngFor="let i of getBlanksAnswersArray()">
+          <app-holder-card [answer]="choosenAnswers[i]" (click)="onAnswerDismiss(i)" class="col-sm-3">
+          </app-holder-card>
+        </div>
+      </div>
+
+
+      <div *ngIf="currentAnswers" class="row row-margin">
+        <div *ngFor="let a of currentAnswers">
+          <app-answer-card [card]="a" (click)="onAnswerClick(a)" class="answer col-sm-1">
+          </app-answer-card>
+        </div>
+      </div>
+    </div>
+
+
+
+  </div>
+
+</div>

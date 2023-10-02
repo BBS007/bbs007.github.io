@@ -1,0 +1,10 @@
+<div *ngIf="!answer" class="card card-holder">
+
+    <div class="card-text">
+
+    </div>
+
+</div>
+<div *ngIf="answer">
+    <app-answer-card [card]="answer"></app-answer-card>
+</div>
