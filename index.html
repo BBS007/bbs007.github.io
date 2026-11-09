@@ -1,15 +1,102 @@
 <!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8">
-    <link rel="icon" href="/favicon.ico">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Vite App</title>
-    <script type="module" crossorigin src="/assets/index-ea96cea7.js"></script>
-    <link rel="stylesheet" href="/assets/index-d7ab1ec1.css">
-  </head>
-  <body>
-    <div id="app"></div>
-    
-  </body>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'self'; style-src 'self'; img-src 'self'; connect-src 'self'; base-uri 'none'; form-action 'none'">
+  <meta name="referrer" content="no-referrer">
+  <meta name="theme-color" content="#c8102e">
+  <meta name="description" content="Pokédex en français : 898 Pokémon, statistiques, talents et évolutions.">
+  <title>Pokédex</title>
+  <link rel="icon" href="favicon.ico" sizes="32x32">
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="apple-touch-icon.png">
+  <link rel="preload" href="data/index.json" as="fetch" crossorigin>
+  <link rel="stylesheet" href="css/style.css">
+  <script type="module" src="js/app.js"></script>
+</head>
+<body class="view-list">
+  <main class="device" id="device">
+    <!-- Volet gauche : écran principal + liste -->
+    <section class="half half--left" aria-label="Écran et liste">
+      <header class="topbar">
+        <span class="lens" aria-hidden="true"></span>
+        <span class="led led--red" aria-hidden="true"></span>
+        <span class="led led--yellow" aria-hidden="true"></span>
+        <span class="led led--green" aria-hidden="true"></span>
+        <h1 class="brand">Pokédex</h1>
+      </header>
+
+      <div class="bezel">
+        <div class="bezel__dots" aria-hidden="true"><span></span><span></span></div>
+        <div class="screen" id="screen">
+          <a class="back" id="back" href="#/">‹ Liste</a>
+          <div class="screen__empty" id="screen-empty">
+            <p>Sélectionne un Pokémon dans la liste.</p>
+          </div>
+          <figure class="art" id="art" hidden>
+            <img class="art__thumb" id="art-thumb" alt="" width="100" height="100">
+            <img class="art__hires" id="art-hires" alt="" width="400" height="400">
+          </figure>
+          <div class="screen__caption" id="caption" hidden>
+            <span class="num" id="d-num"></span>
+            <h2 class="name" id="d-name"></h2>
+          </div>
+        </div>
+        <div class="bezel__bottom" aria-hidden="true">
+          <span class="bezel__button"></span>
+          <span class="grille"><i></i><i></i><i></i><i></i></span>
+        </div>
+      </div>
+
+      <div class="controls">
+        <a class="pad-btn" id="prev" href="#/" aria-label="Pokémon précédent">▲</a>
+        <div class="mini-screen" id="mini-screen" aria-live="polite"></div>
+        <a class="pad-btn" id="next" href="#/" aria-label="Pokémon suivant">▼</a>
+      </div>
+
+      <div class="finder" id="finder">
+        <div class="finder__bar">
+          <label class="sr-only" for="search">Rechercher un Pokémon</label>
+          <input id="search" type="search" placeholder="Nom ou numéro…  ( / )" autocomplete="off" spellcheck="false">
+          <label class="sr-only" for="type-filter">Filtrer par type</label>
+          <select id="type-filter">
+            <option value="">Tous types</option>
+          </select>
+        </div>
+        <p class="finder__count" id="count" aria-live="polite">Chargement…</p>
+        <ul class="list" id="list"></ul>
+      </div>
+    </section>
+
+    <span class="hinge" aria-hidden="true"></span>
+
+    <!-- Volet droit : fiche détaillée -->
+    <section class="half half--right" aria-label="Fiche détaillée">
+      <div class="info-empty" id="info-empty">
+        <p>Les données du Pokémon s'affichent ici.</p>
+      </div>
+      <article class="info" id="info" hidden>
+        <div class="types" id="d-types"></div>
+        <p class="species" id="d-species"></p>
+        <p class="desc" id="d-desc"></p>
+
+        <dl class="facts">
+          <div><dt>Taille</dt><dd id="d-height"></dd></div>
+          <div><dt>Poids</dt><dd id="d-weight"></dd></div>
+          <div><dt>Sexe</dt><dd id="d-gender"></dd></div>
+          <div><dt>Talents</dt><dd id="d-abilities"></dd></div>
+        </dl>
+
+        <h3 class="info__title">Statistiques de base</h3>
+        <div class="stats" id="d-stats"></div>
+
+        <h3 class="info__title">Évolutions</h3>
+        <div class="evo" id="d-evo"></div>
+      </article>
+
+    </section>
+  </main>
+  <noscript><p class="noscript">Le Pokédex a besoin de JavaScript.</p></noscript>
+</body>
 </html>
