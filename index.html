@@ -41,6 +41,7 @@
           <div class="screen__caption" id="caption" hidden>
             <span class="num" id="d-num"></span>
             <h2 class="name" id="d-name"></h2>
+            <div class="types" id="d-types"></div>
           </div>
         </div>
         <div class="bezel__bottom" aria-hidden="true">
@@ -71,30 +72,46 @@
 
     <span class="hinge" aria-hidden="true"></span>
 
-    <!-- Volet droit : fiche détaillée -->
+    <!-- Volet droit : fiche détaillée, dans un second écran -->
     <section class="half half--right" aria-label="Fiche détaillée">
-      <div class="info-empty" id="info-empty">
-        <p>Les données du Pokémon s'affichent ici.</p>
+      <div class="right-top" aria-hidden="true">
+        <span class="led led--small led--red"></span>
+        <span class="led led--small led--green"></span>
       </div>
-      <article class="info" id="info" hidden>
-        <div class="types" id="d-types"></div>
-        <p class="species" id="d-species"></p>
-        <p class="desc" id="d-desc"></p>
 
-        <dl class="facts">
-          <div><dt>Taille</dt><dd id="d-height"></dd></div>
-          <div><dt>Poids</dt><dd id="d-weight"></dd></div>
-          <div><dt>Sexe</dt><dd id="d-gender"></dd></div>
-          <div><dt>Talents</dt><dd id="d-abilities"></dd></div>
-        </dl>
+      <div class="bezel bezel--right">
+        <div class="bezel__dots" aria-hidden="true"><span></span><span></span></div>
+        <div class="screen screen--data">
+          <div class="data-scroll" id="info-scroll">
+            <p class="info-empty" id="info-empty">En attente d'un Pokémon…</p>
+            <article class="info" id="info" hidden>
+              <div class="evo" id="d-evo" aria-label="Ligne d'évolution"></div>
 
-        <h3 class="info__title">Statistiques de base</h3>
-        <div class="stats" id="d-stats"></div>
+              <div class="info__desc" aria-label="Description">
+                <p class="species" id="d-species"></p>
+                <p class="desc" id="d-desc"></p>
+              </div>
 
-        <h3 class="info__title">Évolutions</h3>
-        <div class="evo" id="d-evo"></div>
-      </article>
+              <dl class="facts" aria-label="Profil">
+                <div><dt>Taille</dt><dd id="d-height"></dd></div>
+                <div><dt>Poids</dt><dd id="d-weight"></dd></div>
+                <div><dt>Sexe</dt><dd id="d-gender"></dd></div>
+                <div><dt>Talents</dt><dd id="d-abilities"></dd></div>
+              </dl>
 
+              <div class="stats" id="d-stats" aria-label="Statistiques de base"></div>
+            </article>
+          </div>
+        </div>
+        <div class="bezel__bottom" aria-hidden="true">
+          <span class="grille"><i></i><i></i><i></i><i></i></span>
+          <span class="bezel__button"></span>
+        </div>
+      </div>
+
+      <div class="keypad" aria-hidden="true">
+        <i></i><i></i><i></i><i></i><i></i>
+      </div>
     </section>
   </main>
   <noscript><p class="noscript">Le Pokédex a besoin de JavaScript.</p></noscript>

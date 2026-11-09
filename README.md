@@ -13,7 +13,7 @@ HTML, CSS et JavaScript natifs : **aucune dépendance, aucun build, aucun npm**.
 | `js/app.js` | Application (module ES) : chargement des données, liste, recherche, fiche, navigation. |
 | `data/pokedex-full.json` | Données sources complètes (898 entrées). |
 | `data/index.json` | Liste légère générée (id, nom FR, nom EN, types), environ 13 Ko gzip. |
-| `data/pokedex.json` | Fiches détaillées générées, environ 100 Ko gzip. |
+| `data/pokedex.json` | Fiches détaillées générées (évolutions corrigées, méthodes traduites), environ 100 Ko gzip. |
 | `img/thumb/NNN.png` | Miniatures 100×100 px, utilisées dans la liste et les évolutions. |
 | `img/hires/NNN.png` | Images 400×400 px, utilisées dans la fiche. |
 | `tools/build-data.py` | Génère `data/index.json` et `data/pokedex.json` depuis `data/pokedex-full.json`. |
@@ -30,7 +30,8 @@ HTML, CSS et JavaScript natifs : **aucune dépendance, aucun build, aucun npm**.
 - **Navigation par hash** : `#/25` ouvre Pikachu. Les liens directs et le bouton retour du navigateur fonctionnent sans configuration serveur.
 - **Recherche** : par nom français ou anglais (accents ignorés) ou par numéro (`25`, `#025`), avec filtre par type.
 - **Clavier** : `/` pour la recherche, `Entrée` ouvre le premier résultat, `↑` / `↓` (ou `←` / `→`) pour passer au Pokémon précédent / suivant, `Échap` pour revenir à la liste.
-- **Évolutions** : affichées en arbre (gère les branches comme Évoli). Les liens `next` des données font foi, car certains `prev` de la source sont faux (ex. n°269).
+- **Évolutions** : en tête de fiche, avec un résumé (« Évolue de… », « Évolue en… » et la méthode), puis l'arbre complet, la méthode écrite sur chaque flèche (gère les branches comme Évoli). Le petit écran vert sous l'écran principal affiche la prochaine évolution.
+- **Méthodes d'évolution en français** : traduites par `tools/build-data.py` avec les noms officiels des objets et capacités (Pierre Foudre, Roche Royale, Pouvoir Antique…). Le script corrige aussi les erreurs de la source : conditions tronquées (n°840, 848, 852, 854, 868, 872), liens faux (n°269, 792, auto-évolution du n°849), noms en majuscules (n°670, 702).
 
 ## Sécurité
 
@@ -41,7 +42,7 @@ HTML, CSS et JavaScript natifs : **aucune dépendance, aucun build, aucun npm**.
 ## Modifier les données
 
 1. Éditer `data/pokedex-full.json`.
-2. Régénérer les fichiers légers :
+2. Régénérer les fichiers légers (le script s'arrête et liste les conditions d'évolution sans traduction, à ajouter dans le script) :
 
    ```sh
    python3 tools/build-data.py

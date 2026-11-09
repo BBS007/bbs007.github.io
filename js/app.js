@@ -61,23 +61,11 @@ function formatMeasure(v) {
 function formatGender(g) {
   if (!g || g === "Genderless") return "Asexué";
   const [m, f] = g.split(":").map(Number);
-  const fmt = (n) => `${String(+n.toFixed(1)).replace(".", ",")} %`;
+  const fmt = (n) => `${String(+n.toFixed(1)).replace(".", ",")}\u00a0%`;
   const parts = [];
-  if (m > 0) parts.push(`♂ ${fmt(m)}`);
-  if (f > 0) parts.push(`♀ ${fmt(f)}`);
+  if (m > 0) parts.push(`♂\u00a0${fmt(m)}`);
+  if (f > 0) parts.push(`♀\u00a0${fmt(f)}`);
   return parts.join(" · ") || "Asexué";
-}
-
-function formatCondition(c) {
-  if (!c) return "";
-  return c
-    .replace(/^level (\d+)/i, "Niveau $1")
-    .replace(/^level up/i, "Montée de niveau")
-    .replace(/^high friendship/i, "Bonheur élevé")
-    .replace(/^trade/i, "Échange")
-    .replace(/^use /i, "Objet : ")
-    .replace(/Daytime/g, "le jour")
-    .replace(/Nighttime/g, "la nuit");
 }
 
 // ---------- Chargement ----------
@@ -168,22 +156,16 @@ function applyFilter() {
 
 // ---------- Évolutions ----------
 
+// Les liens et conditions (déjà traduites) viennent de data/pokedex.json, champ "next",
+// préparé et corrigé par tools/build-data.py.
 function buildEvolutionLinks() {
-  const addChild = (parent, child, cond) => {
-    if (!state.byId.has(parent) || !state.byId.has(child)) return;
-    const list = state.childrenOf.get(parent) ?? [];
-    if (!list.some((c) => c.id === child)) list.push({ id: child, cond });
-    state.childrenOf.set(parent, list);
-    if (!state.parentOf.has(child)) state.parentOf.set(child, { id: parent, cond });
-  };
-  const entries = Object.entries(state.details).map(([key, d]) => [Number(key), d.evolution ?? {}]);
-  // Les liens "next" font foi ; "prev" ne sert qu'à compléter un parent manquant
-  // (la source contient des "prev" erronés, ex. n°269).
-  for (const [id, evo] of entries) {
-    for (const [next, cond] of evo.next ?? []) addChild(id, Number(next), cond);
-  }
-  for (const [id, evo] of entries) {
-    if (evo.prev && !state.parentOf.has(id)) addChild(Number(evo.prev[0]), id, evo.prev[1]);
+  for (const [key, d] of Object.entries(state.details)) {
+    const id = Number(key);
+    const children = (d.next ?? []).filter(([child]) => state.byId.has(child))
+      .map(([child, cond]) => ({ id: child, cond }));
+    if (!children.length) continue;
+    state.childrenOf.set(id, children);
+    for (const c of children) if (!state.parentOf.has(c.id)) state.parentOf.set(c.id, { id, cond: c.cond });
   }
 }
 
@@ -199,32 +181,56 @@ function evolutionRoot(id) {
   return root;
 }
 
-// Arbre d'évolution : chaque nœud suivi de ses évolutions (gère les branches, ex. Évoli, Chenipotte).
-function evolutionNode(m, current, seen) {
-  seen.add(m.id);
-  const p = state.byId.get(m.id);
-  const item = el("a", { class: "evo__item", href: `#/${m.id}` },
-    el("img", { src: thumbSrc(m.id), alt: "", width: 44, height: 44, loading: "lazy" }),
-    el("span", {}, document.createTextNode(p.fr),
-      m.cond ? el("small", { text: formatCondition(m.cond) }) : null));
-  if (m.id === current) item.setAttribute("aria-current", "true");
-
-  const children = (state.childrenOf.get(m.id) ?? []).filter((c) => !seen.has(c.id));
-  if (!children.length) return item;
-  return el("div", { class: "evo__branch" },
-    item,
-    el("span", { class: "evo__arrow", "aria-hidden": "true", text: "›" }),
-    el("div", { class: "evo__stage" }, ...children.map((c) => evolutionNode(c, current, seen))));
+// Stades d'évolution de toute la famille (parcours en largeur depuis la base).
+// Chaque membre garde la méthode qui y mène et le Pokémon d'origine.
+function evolutionStages(root) {
+  const stages = [[{ id: root, cond: "", from: null }]];
+  const seen = new Set([root]);
+  while (true) {
+    const next = [];
+    for (const m of stages.at(-1)) {
+      for (const c of state.childrenOf.get(m.id) ?? []) {
+        if (seen.has(c.id)) continue;
+        seen.add(c.id);
+        next.push({ id: c.id, cond: c.cond, from: m.id });
+      }
+    }
+    if (!next.length) return stages;
+    stages.push(next);
+  }
 }
 
+// Une seule ligne : stade 1 › stade 2 › stade 3, la méthode écrite sous chaque évolution.
 function renderEvolutions(id) {
-  const box = $("d-evo");
-  const root = evolutionRoot(id);
-  if (!state.childrenOf.has(root)) {
-    box.replaceChildren(el("p", { class: "evo__none", text: "Ce Pokémon n'évolue pas." }));
-    return;
-  }
-  box.replaceChildren(evolutionNode({ id: root, cond: "" }, id, new Set()));
+  const stages = evolutionStages(evolutionRoot(id));
+  const branched = stages.some((s) => new Set(s.map((m) => m.from)).size > 1);
+  const nodes = [];
+  stages.forEach((stage, i) => {
+    if (i) nodes.push(el("span", { class: "evo__arrow", "aria-hidden": "true", text: "›" }));
+    const col = el("div", { class: "evo__stage" }, ...stage.map((m) => {
+      const p = state.byId.get(m.id);
+      const link = el("a", { class: "evo__mon", href: `#/${m.id}` },
+        el("img", { src: thumbSrc(m.id), alt: "", width: 56, height: 56, loading: "lazy" }),
+        el("span", { class: "evo__name", text: p.fr }),
+        m.cond ? el("span", { class: "evo__cond", text: m.cond }) : null);
+      // Branches qui divergent (ex. Chenipotte) : on précise l'origine
+      if (branched && m.from) link.append(el("span", { class: "evo__from", text: `depuis ${state.byId.get(m.from).fr}` }));
+      if (m.id === id) link.setAttribute("aria-current", "true");
+      return link;
+    }));
+    col.style.setProperty("--n", Math.min(stage.length, 4));
+    nodes.push(col);
+  });
+  if (stages.length === 1) nodes.push(el("span", { class: "evo__none", text: "N'évolue pas." }));
+  $("d-evo").replaceChildren(...nodes);
+}
+
+// Texte du petit écran vert : prochaine évolution en priorité.
+function miniScreenText(id) {
+  const children = state.childrenOf.get(id) ?? [];
+  if (children.length === 1) return `▶ ${state.byId.get(children[0].id).fr} : ${children[0].cond}`;
+  if (children.length > 1) return `▶ ${children.length} évolutions possibles`;
+  return state.parentOf.has(id) ? "■ Stade final" : "■ N'évolue pas";
 }
 
 // ---------- Fiche ----------
@@ -286,7 +292,7 @@ function renderDetail(id) {
     return;
   }
 
-  $("mini-screen").textContent = `${pad(id)} · ${p.types.map(typeLabel).join(" / ")} · ${d.species}`;
+  $("mini-screen").textContent = miniScreenText(id);
   $("d-species").textContent = d.species;
   $("d-desc").textContent = d.description;
   $("d-height").textContent = formatMeasure(d.profile?.height);
@@ -347,7 +353,7 @@ function route() {
     if (isMobile()) window.scrollTo(0, 0);
     else {
       if (!p.li.hidden) p.link.scrollIntoView({ block: "nearest" });
-      $("info").scrollTop = 0;
+      $("info-scroll").scrollTop = 0;
     }
   } else {
     renderEmpty();
